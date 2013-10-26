@@ -1,0 +1,27 @@
+
+"complete
+function! s:meet_neocomplete_requirements()
+    return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
+endfunction
+
+if s:meet_neocomplete_requirements()
+    NeoBundle 'Shougo/neocomplete.vim'
+    NeoBundleFetch 'Shougo/neocomplcache.vim'
+else
+    NeoBundleFetch 'Shougo/neocomplete.vim'
+    NeoBundle 'Shougo/neocomplcache.vim'
+endif
+
+if s:meet_neocomplete_requirements() "For neocomplete
+    let g:neocomplete#enable_at_startup =1
+    let g:neocomplete#enable_smart_case =1
+    let g:neocomplete#sources#syntax#min_keyword_length =3
+    let g:neocomplete#enable_auto_select =1
+else
+    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplcache_enable_smart_case = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+    let g:neocomplcache_min_syntax_length = 3
+    let g:neocomplcache_enable_auto_select = 1
+endif
+

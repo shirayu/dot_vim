@@ -1,0 +1,56 @@
+"use vim not vi
+set nocompatible 
+
+"show numbers
+set number
+
+"not show the message
+set shortmess+=I
+
+"encoding
+set fileencoding=utf-8	"to
+set fileencodings=utf-8,euc-jp,shift-jis,iso-2022-jp,utf-16	"from
+set encoding=utf-8
+
+"do not stop cusor at Begin and end of line
+set whichwrap=b,s,h,l,<,>,[,]
+
+
+"set color
+set background=dark
+set foldlevel=100 "Don't autofold anything
+set nofoldenable
+
+"unnecessary files
+set noswapfile
+set nowritebackup
+set nobackup
+
+set autoindent smartindent tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+set spell
+
+set ignorecase  " 大文字小文字を区別しない
+set smartcase   " 検索文字に大文字がある場合は大文字小文字を区別
+set incsearch   " インクリメンタルサーチ
+set hlsearch    " 検索マッチテキストをハイライト
+set showmatch           " 対応する括弧などをハイライト表示する
+set matchpairs& matchpairs+=<:> "対応括弧に'<'と'>'のペアを追加
+set backspace=indent,eol,start " バックスペースでせるようにする
+
+"no bells
+set t_vb=
+set novisualbell
+
+syntax on
+
+"swig
+au BufNewFile,BufRead *.i set filetype=swig
+au BufNewFile,BufRead *.swg set filetype=swig
+
+"show underline
+set cursorline
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
+
+
