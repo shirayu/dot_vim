@@ -51,6 +51,15 @@ let g:syntastic_javascript_syntax_checker = 'jshint'
 map sc :call <C-u>SyntasticCheck<CR>
 
 
+"latex
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse latex-suite. Set your grep
+" program to alway generate a file-name.
+NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+set grepprg=grep\ -nH\ $*
+
+
+
 NeoBundleCheck
 
 
