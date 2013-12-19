@@ -53,4 +53,6 @@ set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
+"Double <ESC> hit makes the highlight disable
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
