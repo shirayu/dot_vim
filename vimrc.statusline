@@ -48,12 +48,22 @@ function! MyReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &ro ? 'RO' : ''
 endfunction
 
+"Use ~ when the file is under the home directory
+function! MyRelativeFilename()
+    if stridx(expand('%:p'), expand('~')) == 0
+        return substitute(expand('%:p'), expand('~'), '~', '')
+    else
+        return substitute(expand('%:p'))
+    endif
+endfunction
+
+
 function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
         \  &ft == 'unite' ? unite#get_status_string() :
         \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ '' != expand('%:p') ? MyRelativeFilename() : '[No Name]') .
         \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
 
