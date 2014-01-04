@@ -53,7 +53,7 @@ function! MyRelativeFilename()
     if stridx(expand('%:p'), expand('~')) == 0
         return substitute(expand('%:p'), expand('~'), '~', '')
     else
-        return substitute(expand('%:p'))
+        return expand('%:p')
     endif
 endfunction
 
