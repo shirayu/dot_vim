@@ -56,3 +56,22 @@ highlight CursorLine gui=underline guifg=NONE guibg=NONE
 "Double <ESC> hit makes the highlight disable
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+"Fix Key
+" http://vim.wikia.com/wiki/GNU_Screen_integration
+map [1~ <Home>
+map [4~ <End>
+map OF <End>
+imap [1~ <Home>
+imap [4~ <End>
+imap OF <End>
+
+" Checking typo. Warn if the file name starts with : or ends with [ or ]
+" http://d.hatena.ne.jp/hyuki/20140211/vim
+autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
+function! s:write_check_typo(file)
+    let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
+    let input = input(prompt)
+    if input =~? '^y\(es\)\=$'
+        execute 'write'.(v:cmdbang ? '!' : '') a:file
+    endif
+endfunction
