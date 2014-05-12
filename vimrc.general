@@ -28,7 +28,10 @@ set nobackup
 
 set autoindent smartindent tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+set spelllang+=cjk
 set spell
+"Triple <ESC> hit makes the highlight disable
+nmap <Esc><Esc><Esc> :set nospell<CR><Esc>
 
 set ignorecase  " 大文字小文字を区別しない
 set smartcase   " 検索文字に大文字がある場合は大文字小文字を区別
