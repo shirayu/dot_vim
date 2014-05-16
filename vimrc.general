@@ -15,6 +15,8 @@ set encoding=utf-8
 "do not stop cusor at Begin and end of line
 set whichwrap=b,s,h,l,<,>,[,]
 
+"type F3 toggles paste mode
+set pastetoggle=<F3>
 
 "set color
 set background=dark
@@ -30,7 +32,7 @@ set autoindent smartindent tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 set spelllang+=cjk
 set spell
-"Triple <ESC> hit makes the highlight disable
+"Triple <ESC> hit makes no spell
 nmap <Esc><Esc><Esc> :set nospell<CR><Esc>
 
 set ignorecase  " 大文字小文字を区別しない
