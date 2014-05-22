@@ -68,7 +68,7 @@ NeoBundle 'tpope/vim-markdown'
 
 "TSV
 autocmd FileType tsv setlocal noautoindent nosmartindent noexpandtab
-autocmd FileType tsv setlocal tabstop=20 nowrap shiftwidth=0 softtabstop=0
+autocmd FileType tsv setlocal tabstop=20 shiftwidth=0 softtabstop=0
 
 NeoBundleCheck
 
