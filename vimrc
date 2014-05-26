@@ -1,3 +1,7 @@
+":NeoBundleInstall
+":NeoBundleUpdate
+":NeoBundleClean
+
 set nocompatible
 filetype off
 
@@ -66,9 +70,8 @@ let g:previm_open_cmd = 'google-chrome'
 map pv :PrevimOpen<CR>
 NeoBundle 'tpope/vim-markdown'
 
-"TSV
-autocmd FileType tsv setlocal noautoindent nosmartindent noexpandtab
-autocmd FileType tsv setlocal tabstop=20 shiftwidth=0 softtabstop=0
+"NoSQL
+set runtimepath+=~/.vim/mine/nosql.vim/
 
 NeoBundleCheck
 
