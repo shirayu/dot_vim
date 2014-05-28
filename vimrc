@@ -1,6 +1,9 @@
-":NeoBundleInstall
-":NeoBundleUpdate
-":NeoBundleClean
+"To Install
+"   $ vi +NeoBundleInstall +q
+"To Update
+"   $ vi +NeoBundleUpdate +q
+"To Clean
+"   $ vi +NeoBundleClean +q
 
 set nocompatible
 filetype off
