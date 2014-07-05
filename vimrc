@@ -32,7 +32,7 @@ endif
 
 
 NeoBundle 'vim-scripts/yanktmp.vim'
-""let g:yanktmp_file = '/tmp/example_tmp_file'
+let g:yanktmp_file = '/tmp/.' . $USER . '.vimyanktmp'
 map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
