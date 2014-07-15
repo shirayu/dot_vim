@@ -30,6 +30,9 @@ if filereadable(expand('~/.vim/vimrc.complete'))
   source ~/.vim/vimrc.complete
 endif
 
+if filereadable(expand('~/.vim/vimrc.commentify'))
+  source ~/.vim/vimrc.commentify
+endif
 
 NeoBundle 'vim-scripts/yanktmp.vim'
 let g:yanktmp_file = '/tmp/.' . $USER . '.vimyanktmp'
@@ -42,10 +45,6 @@ map sP :call YanktmpPaste_P()<CR>
 NeoBundle 'https://github.com/rkulla/pydiction'
 autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-dict' "use Ctrl+n
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-
-"Comment out
-NeoBundle 'https://github.com/hrp/EnhancedCommentify'
-
 
 
 NeoBundle 'scrooloose/syntastic'

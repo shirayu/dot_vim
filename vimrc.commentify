@@ -1,0 +1,14 @@
+
+"Comment out
+"
+NeoBundle 'https://github.com/hrp/EnhancedCommentify'
+
+function EnhCommentifyCallback(ft)
+    if a:ft == 'markdown'
+        let b:ECcommentOpen = '<!-- '
+        let b:ECcommentMiddle = ' '
+        let b:ECcommentClose = ' -->'
+    endif
+endfunction
+let g:EnhCommentifyCallbackExists = 'Yes'
+
