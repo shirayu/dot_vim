@@ -40,6 +40,7 @@ map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
 
+NeoBundle "thinca/vim-template"
 
 "For python
 NeoBundle 'https://github.com/rkulla/pydiction'
