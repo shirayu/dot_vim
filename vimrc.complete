@@ -23,5 +23,8 @@ else
     let g:neocomplcache_enable_underbar_completion = 1
     let g:neocomplcache_min_syntax_length = 3
     let g:neocomplcache_enable_auto_select = 1
+
+    let g:neocomplcache_enable_auto_close_preview = 0
 endif
 
+set completeopt=menuone

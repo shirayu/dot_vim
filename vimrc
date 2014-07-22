@@ -75,6 +75,12 @@ NeoBundle 'tpope/vim-markdown'
 "NoSQL
 set runtimepath+=~/.vim/mine/nosql.vim/
 
+
+if filereadable(expand('~/.vim/vimrc.golang'))
+  source ~/.vim/vimrc.golang
+endif
+
+
 NeoBundleCheck
 
 
