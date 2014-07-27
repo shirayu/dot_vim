@@ -1,8 +1,16 @@
 
 
 "Markdown
-NeoBundle 'https://github.com/kannokanno/previm'
+NeoBundleLazy 'https://github.com/kannokanno/previm', {
+      \ "autoload": {
+      \   "filetypes": "markdown",
+      \ }}
 let g:previm_open_cmd = 'google-chrome'
 map pv :PrevimOpen<CR>
-NeoBundle 'tpope/vim-markdown'
+
+
+NeoBundleLazy 'tpope/vim-markdown', {
+      \ "autoload": {
+      \   "filetypes": "markdown",
+      \ }}
 
