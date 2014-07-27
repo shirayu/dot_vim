@@ -31,10 +31,6 @@ map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
 
-NeoBundle "thinca/vim-template"
-
-source ~/.vim/vimrc.python
-
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_enable_highlighting = 1
@@ -47,27 +43,14 @@ let g:syntastic_tex_checkers=['lacheck', 'chktex']
 map sc :call <C-u>SyntasticCheck<CR>
 
 
-"latex
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse latex-suite. Set your grep
-" program to alway generate a file-name.
-NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-set grepprg=grep\ -nH\ $*
+NeoBundle "thinca/vim-template"
 
-
-"Markdown
-NeoBundle 'https://github.com/kannokanno/previm'
-let g:previm_open_cmd = 'google-chrome'
-map pv :PrevimOpen<CR>
-NeoBundle 'tpope/vim-markdown'
-
-"NoSQL
+"language specific setting
 set runtimepath+=~/.vim/mine/nosql.vim/
-
-
-if filereadable(expand('~/.vim/vimrc.golang'))
-  source ~/.vim/vimrc.golang
-endif
+source ~/.vim/lang/vimrc.latex
+source ~/.vim/lang/vimrc.markdown
+source ~/.vim/lang/vimrc.python
+source ~/.vim/lang/vimrc.golang
 
 
 NeoBundleCheck
