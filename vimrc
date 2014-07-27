@@ -17,22 +17,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 "Call my original setting
-if filereadable(expand('~/.vim/vimrc.general'))
-  source ~/.vim/vimrc.general
-endif
+source ~/.vim/vimrc.general
 
 "Call complex plugins
-if filereadable(expand('~/.vim/vimrc.statusline'))
-  source ~/.vim/vimrc.statusline
-endif
+source ~/.vim/vimrc.statusline
+source ~/.vim/vimrc.complete
+source ~/.vim/vimrc.commentify
 
-if filereadable(expand('~/.vim/vimrc.complete'))
-  source ~/.vim/vimrc.complete
-endif
-
-if filereadable(expand('~/.vim/vimrc.commentify'))
-  source ~/.vim/vimrc.commentify
-endif
 
 NeoBundle 'vim-scripts/yanktmp.vim'
 let g:yanktmp_file = '/tmp/.' . $USER . '.vimyanktmp'
@@ -42,10 +33,7 @@ map sP :call YanktmpPaste_P()<CR>
 
 NeoBundle "thinca/vim-template"
 
-"For python
-NeoBundle 'https://github.com/rkulla/pydiction'
-autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-dict' "use Ctrl+n
-autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+source ~/.vim/vimrc.python
 
 
 NeoBundle 'scrooloose/syntastic'
