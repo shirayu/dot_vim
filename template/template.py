@@ -11,8 +11,8 @@ __license__ = "GPL v3"
 
 import codecs
 import sys
-# sys.stdin  = codecs.getreader('UTF-8')(sys.stdin)
-# sys.stdout = codecs.getwriter('UTF-8')(sys.stdout)
+#sys.stdin  = codecs.getreader('UTF-8')(sys.stdin)
+#sys.stdout = codecs.getwriter('UTF-8')(sys.stdout)
 
 
 
@@ -28,5 +28,5 @@ def main():
         pass
 
 if __name__=='__main__':
-    pass
+    main()
 
