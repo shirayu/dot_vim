@@ -45,6 +45,9 @@ map sc :call <C-u>SyntasticCheck<CR>
 
 NeoBundle "thinca/vim-template"
 
+NeoBundle "rhysd/clever-f.vim"
+
+
 "language specific setting
 set runtimepath+=~/.vim/mine/nosql.vim/
 source ~/.vim/lang/vimrc.latex
