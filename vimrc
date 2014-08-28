@@ -47,6 +47,15 @@ NeoBundle "thinca/vim-template"
 
 NeoBundle "rhysd/clever-f.vim"
 
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+
 
 "language specific setting
 set runtimepath+=~/.vim/mine/nosql.vim/
