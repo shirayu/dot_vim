@@ -25,3 +25,6 @@ if $GOPATH != ''
     let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 endif
 
+
+autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :match goErr /\<err\>/
