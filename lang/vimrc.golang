@@ -6,9 +6,15 @@ autocmd BufNewFile,BufRead *.go setlocal filetype=go
 autocmd FileType go autocmd BufWritePre <buffer> Fmt "auto go fmt when saving
 autocmd FileType go setlocal tabstop=4 noexpandtab softtabstop=0
 
-if $GOROOT != ''
-    set rtp+=$GOROOT/misc/vim
-endif
+NeoBundleLazy 'https://github.com/google/vim-ft-go', {
+      \ "autoload": {
+      \   "filetypes": "go",
+      \ }}
+NeoBundleLazy 'https://github.com/vim-jp/vim-go-extra', {
+      \ "autoload": {
+      \   "filetypes": "go",
+      \ }}
+
 
 if $GOPATH != ''
     exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
