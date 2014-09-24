@@ -16,20 +16,21 @@ NeoBundleLazy 'https://github.com/vim-jp/vim-go-extra', {
       \ }}
 
 
-if $GOPATH != ''
+if exists(globpath($GOPATH, "src/github.com/nsf/gocode/vim"))
     exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-
-    "For neocomplete
-    if !exists('g:neocomplete#sources#omni#input_patterns')
-        let g:neocomplete#sources#omni#input_patterns = {}
-    endif
-    let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
-
-    if !exists('g:neocomplcache_omni_patterns')
-        let g:neocomplcache_omni_patterns = {}
-    endif
-    let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 endif
+
+
+"For neocomplete
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 
 
 autocmd FileType go :highlight goErr cterm=bold ctermfg=214
