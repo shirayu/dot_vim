@@ -25,6 +25,8 @@ source ~/.vim/vimrc.complete
 source ~/.vim/vimrc.commentify
 
 
+NeoBundle 'vim-scripts/renamer.vim'
+
 NeoBundle 'vim-scripts/yanktmp.vim'
 let g:yanktmp_file = '/tmp/.' . $USER . '.vimyanktmp'
 map sy :call YanktmpYank()<CR>
