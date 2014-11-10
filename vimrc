@@ -23,6 +23,7 @@ source ~/.vim/vimrc.general
 source ~/.vim/vimrc.statusline
 source ~/.vim/vimrc.complete
 source ~/.vim/vimrc.commentify
+source ~/.vim/vimrc.vimux
 
 
 NeoBundle 'vim-scripts/renamer.vim'
