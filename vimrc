@@ -68,6 +68,13 @@ source ~/.vim/lang/vimrc.python
 source ~/.vim/lang/vimrc.golang
 source ~/.vim/lang/vimrc.cplusplus
 
+augroup QfAutoCommands
+  autocmd!
+
+" Auto-close quickfix window
+    autocmd WinEnter * if (winnr('$') == 1) && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix' | quit | endif
+augroup END
+
 
 NeoBundleCheck
 
