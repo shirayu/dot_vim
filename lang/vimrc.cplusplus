@@ -1,0 +1,42 @@
+
+
+"C++
+
+"" clang-complete
+NeoBundleLazy  'https://github.com/Rip-Rip/clang_complete', {
+      \ "autoload": {
+      \   "filetypes": "cpp",
+      \ }}
+
+let g:clang_periodic_quickfix = 1
+let g:clang_complete_copen = 1
+let g:clang_use_library = 1
+
+" this need to be updated on LLVM update
+" Please make a symbolic link like
+"   ln -s /usr/lib/llvm-3.5/lib $HOME/local/llvm/lib
+"   ln -s /usr/include/c++/4.8/ $HOME/local/llvm/include1
+"   ln -s /usr/include/x86_64-linux-gnu/c++/4.8/ $HOME/local/llvm/include2
+" For basils
+"   /share/usr-x86_64/include/c++/4.9.1 and
+"   /share/usr-x86_64/include/c++/4.9.1/x86_64-unknown-linux-gnu/
+let g:clang_library_path = $HOME . '/local/llvm/lib/'
+let g:clang_user_options = "-std=c++11 -stdlib=libc++ -I" . $HOME . "/local/llvm/include1 -I" . $HOME . "/local/llvm/include2"
+
+autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+
+function! s:clang_format()
+  let now_line = line(".")
+  exec ":%! clang-format"
+  exec ":" . now_line
+endfunction
+
+if executable('clang-format')
+  augroup cpp_clang_format
+    autocmd!
+    autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
+  augroup END
+endif
+
