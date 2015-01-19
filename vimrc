@@ -44,6 +44,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_javascript_syntax_checker = 'jshint'
 let g:syntastic_tex_checkers=['lacheck', 'chktex']
 map sc :call <C-u>SyntasticCheck<CR>
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 
 NeoBundle "thinca/vim-template"
