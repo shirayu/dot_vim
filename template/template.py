@@ -3,7 +3,7 @@
 
 """
 """
-__author__ = 'Yuta Hayashibe' 
+__author__ = 'Yuta Hayashibe'
 __version__ = ""
 __copyright__ = ""
 __license__ = "GPL v3"
@@ -11,22 +11,34 @@ __license__ = "GPL v3"
 
 import codecs
 import sys
-#sys.stdin  = codecs.getreader('UTF-8')(sys.stdin)
-#sys.stdout = codecs.getwriter('UTF-8')(sys.stdout)
-
-
+sys.stdin = codecs.getreader('UTF-8')(sys.stdin)
+sys.stdout = codecs.getwriter('UTF-8')(sys.stdout)
+sys.stderr = codecs.getwriter('UTF-8')(sys.stderr)
 
 
 import optparse
-import sys
+
+
 def main():
     oparser = optparse.OptionParser()
-#     oparser.add_option("-i", "--input", dest="input")
+    oparser.add_option("-i", "--input", dest="input", default="-")
+    oparser.add_option("-o", "--output", dest="output", default="-")
+    oparser.add_option(
+        "--verbose", dest="verbose", action="store_true", default=False)
     (opts, args) = oparser.parse_args()
 
-    for line in iter(sys.stdin.readline, ""):
+    if opts.input == "-":
+        inf = sys.stdin
+    else:
+        inf = codecs.open(opts.input, "r", "utf8")
+
+    if opts.output == "-":
+        outf = sys.stdout
+    else:
+        outf = codecs.open(opts.output, "w", "utf8")
+
+    for line in inf:
         pass
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
-
