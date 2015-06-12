@@ -9,9 +9,12 @@ import (
 
 type cmdOptions struct {
 	Help   bool   `short:"h" long:"help" description:"Show this help message"`
-	Input  string `short:"i" long:"input"`
-	Output string `short:"o" long:"output"`
+	Input  string `short:"i" long:"input" required:"true"`
+	Output string `short:"o" long:"output" required:"true"`
 	Log    bool   `long:"log" description:"Enable logging" default:"false"`
+}
+
+func operation(opts *cmdOptions) {
 }
 
 func main() {
@@ -19,7 +22,7 @@ func main() {
 	optparser := flags.NewParser(&opts, flags.Default)
 	optparser.Name = ""
 	optparser.Usage = "-i input -o output [OPTIONS]"
-	optparser.Parse()
+	_, err := optparser.Parse()
 
 	//show help
 	if len(os.Args) == 1 {
@@ -31,13 +34,13 @@ func main() {
 			os.Exit(0)
 		}
 	}
-
-	if opts.Input == "" || opts.Output == "" {
-		os.Exit(0)
+	if err != nil {
+		os.Exit(1)
 	}
 
 	if opts.Log == false {
 		log.SetOutput(ioutil.Discard)
 	}
 
+	operation(&opts)
 }
