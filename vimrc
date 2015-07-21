@@ -8,12 +8,9 @@
 set nocompatible
 filetype off
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
-endif
+set runtimepath+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 "Call my original setting
@@ -77,6 +74,8 @@ augroup QfAutoCommands
     autocmd WinEnter * if (winnr('$') == 1) && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix' | quit | endif
 augroup END
 
+call neobundle#end()
+
 
 NeoBundleCheck
 
@@ -85,3 +84,5 @@ NeoBundleCheck
 " http://mattn.kaoriya.net/software/vim/20120618123848.htm
 filetype plugin on
 filetype indent on
+
+
