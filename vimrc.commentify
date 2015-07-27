@@ -8,6 +8,10 @@ function EnhCommentifyCallback(ft)
         let b:ECcommentOpen = '<!-- '
         let b:ECcommentMiddle = ' '
         let b:ECcommentClose = ' -->'
+    elseif a:ft == 'pukiwiki'
+        let b:ECcommentOpen = '// '
+        let b:ECcommentMiddle = ''
+        let b:ECcommentClose = ''
     endif
 endfunction
 let g:EnhCommentifyCallbackExists = 'Yes'

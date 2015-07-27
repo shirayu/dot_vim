@@ -66,6 +66,7 @@ source ~/.vim/lang/vimrc.markdown
 source ~/.vim/lang/vimrc.python
 source ~/.vim/lang/vimrc.golang
 source ~/.vim/lang/vimrc.cplusplus
+source ~/.vim/lang/vimrc.pukiwiki
 
 augroup QfAutoCommands
   autocmd!

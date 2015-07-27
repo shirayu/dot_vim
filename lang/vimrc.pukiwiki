@@ -1,0 +1,5 @@
+
+NeoBundleLazy 'https://github.com/ytsunetsune/vim-pukiwiki-syntax', {
+      \ "autoload": {
+      \   "filetypes": "pukiwiki",
+      \ }}
