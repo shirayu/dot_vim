@@ -9,6 +9,7 @@ __copyright__ = ""
 __license__ = "GPL v3"
 
 
+import optparse
 import codecs
 import sys
 sys.stdin = codecs.getreader('UTF-8')(sys.stdin)
@@ -16,7 +17,9 @@ sys.stdout = codecs.getwriter('UTF-8')(sys.stdout)
 sys.stderr = codecs.getwriter('UTF-8')(sys.stderr)
 
 
-import optparse
+def operation(inf, outf):
+    for line in inf:
+        pass
 
 
 def main():
@@ -36,9 +39,8 @@ def main():
         outf = sys.stdout
     else:
         outf = codecs.open(opts.output, "w", "utf8")
+    operation(inf, outf)
 
-    for line in inf:
-        pass
 
 if __name__ == '__main__':
     main()
