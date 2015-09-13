@@ -3,6 +3,12 @@ This is my .vimrc
 
 ## Related softwares
 
+### For Go
+```
+go get -u github.com/nsf/gocode
+go get -u code.google.com/p/rog-go/exp/cmd/godef
+```
+
 ### For python
 For python format, install ``autopep8`` in ``~/local/bin`` which ``$PATH`` includes.
 
