@@ -14,9 +14,11 @@ let g:clang_use_library = 1
 
 " These operations are needed when you update LLVM
 " Please make symbolic links like for debian
+"   sudo aptitude install clang libclang clang-format-3.8
 "   ln -s /usr/lib/llvm-3.5/lib $HOME/local/llvm/lib
-"   ln -s /usr/include/c++/4.8/ $HOME/local/llvm/include1
-"   ln -s /usr/include/x86_64-linux-gnu/c++/4.8/ $HOME/local/llvm/include2
+"   ln -s /usr/include/c++/4.9/ $HOME/local/llvm/include1
+"   ln -s /usr/include/x86_64-linux-gnu/c++/4.9/ $HOME/local/llvm/include2
+"   ln -s `which clang-format-3.8` ~/local/bin/clang-format
 " For basils
 "   ln -s /share/usr-x86_64/lib/ $HOME/local/llvm/lib
 "   ln -s /share/usr-x86_64/include/c++/4.9.1 $HOME/local/llvm/include1
