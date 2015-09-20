@@ -4,6 +4,8 @@
 "   $ vi +NeoBundleUpdate +q
 "To Clean
 "   $ vi +NeoBundleClean +q
+"To gc
+"   $ find ~/.vim/bundle -maxdepth 1 -mindepth 1 -type d -follow |  xargs -i bash -c 'cd {}; git gc'
 
 set nocompatible
 filetype off
