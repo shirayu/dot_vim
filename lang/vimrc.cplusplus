@@ -29,11 +29,9 @@ let g:clang_user_options = "-std=c++11 -stdlib=libc++ -I" . $HOME . "/local/llvm
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 
-" save the file like ~/.clang-format
-"   BasedOnStyle: LLVM
 function! s:clang_format()
   let now_line = line(".")
-  exec ":%! clang-format"
+  exec ":%! clang-format -style='{BasedOnStyle: llvm, IndentWidth: 4}'"
   exec ":" . now_line
 endfunction
 
