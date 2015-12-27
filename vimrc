@@ -69,6 +69,7 @@ source ~/.vim/lang/vimrc.python
 source ~/.vim/lang/vimrc.golang
 source ~/.vim/lang/vimrc.cplusplus
 source ~/.vim/lang/vimrc.pukiwiki
+source ~/.vim/lang/vimrc.JavaScript
 
 augroup QfAutoCommands
   autocmd!
