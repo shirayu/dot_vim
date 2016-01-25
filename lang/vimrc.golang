@@ -3,19 +3,38 @@
 "golang
 
 autocmd BufNewFile,BufRead *.go setlocal filetype=go
-autocmd FileType go autocmd BufWritePre <buffer> Fmt "auto go fmt when saving
 autocmd FileType go setlocal tabstop=4 noexpandtab softtabstop=0
 
-NeoBundleLazy 'https://github.com/google/vim-ft-go', {
+NeoBundleLazy 'https://github.com/fatih/vim-go', {
       \ "autoload": {
       \   "filetypes": "go",
       \ }}
-NeoBundleLazy 'https://github.com/vim-jp/vim-go-extra', {
-      \ "autoload": {
-      \   "filetypes": "go",
-      \ }}
+let g:go_bin_path = expand("~/.go/bin")
+let g:go_play_open_browser = 0
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "gofmt"
+let g:go_disable_autoinstall = 1
 
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gl :GoLint<CR>
 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+"gocode
 if exists(globpath($GOPATH, "src/github.com/nsf/gocode/vim"))
     exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 endif
@@ -26,6 +45,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+"let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 
 if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}

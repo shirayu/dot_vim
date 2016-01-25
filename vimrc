@@ -45,6 +45,8 @@ let g:syntastic_tex_checkers=['lacheck', 'chktex']
 map sc :call <C-u>SyntasticCheck<CR>
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_go_checkers = ['go', 'govet', 'golint']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 
 NeoBundle "thinca/vim-template"
