@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/jessevdk/go-flags"
 	"io/ioutil"
 	"log"
 	"os"
+
+	"github.com/jessevdk/go-flags"
 )
 
 type cmdOptions struct {
@@ -14,7 +15,8 @@ type cmdOptions struct {
 	Log    bool   `long:"log" description:"Enable logging" default:"false"`
 }
 
-func operation(opts *cmdOptions) {
+func operation(opts *cmdOptions) error {
+	return nil
 }
 
 func main() {
@@ -41,5 +43,8 @@ func main() {
 		log.SetOutput(ioutil.Discard)
 	}
 
-	operation(&opts)
+	if err := operation(&opts); err != nil {
+		log.Fatal(err)
+	}
+
 }
