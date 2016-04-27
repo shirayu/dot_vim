@@ -62,6 +62,8 @@ NeoBundle 'Shougo/vimproc.vim', {
       \    },
       \ }
 
+"Underlines the word under the cursor
+NeoBundle 'itchyny/vim-cursorword'
 
 "language specific setting
 set runtimepath+=~/.vim/mine/nosql.vim/
