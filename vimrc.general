@@ -30,7 +30,7 @@ set nobackup
 
 set autoindent smartindent tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
-set spelllang+=cjk
+set spelllang=en,cjk
 set spell
 "Triple <ESC> hit makes no spell
 nmap <Esc><Esc><Esc> :set nospell<CR><Esc>
