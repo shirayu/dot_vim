@@ -66,7 +66,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'itchyny/vim-cursorword'
 
 "language specific setting
-set runtimepath+=~/.vim/mine/nosql.vim/
+NeoBundle 'shirayu/nosql.vim'
 source ~/.vim/lang/vimrc.latex
 source ~/.vim/lang/vimrc.markdown
 source ~/.vim/lang/vimrc.python
