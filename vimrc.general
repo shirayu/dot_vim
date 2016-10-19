@@ -53,6 +53,12 @@ syntax on
 au BufNewFile,BufRead *.i set filetype=swig
 au BufNewFile,BufRead *.swg set filetype=swig
 
+"wdiff
+au BufNewFile,BufRead *.wdiff set filetype=wdiff
+autocmd FileType wdiff hi Special    cterm=None ctermfg=Red
+autocmd FileType wdiff hi Identifier cterm=None ctermfg=Green
+
+
 "show underline
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
