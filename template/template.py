@@ -1,20 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-"""
-"""
-__author__ = 'Yuta Hayashibe'
-__version__ = ""
-__copyright__ = ""
-__license__ = "GPL v3"
-
 
 import optparse
 import codecs
 import sys
-sys.stdin = codecs.getreader('UTF-8')(sys.stdin)
-sys.stdout = codecs.getwriter('UTF-8')(sys.stdout)
-sys.stderr = codecs.getwriter('UTF-8')(sys.stderr)
 
 
 def operation(inf, outf):
