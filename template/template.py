@@ -1,23 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+'''
+Stub
+'''
 
-import optparse
+import argparse
 import codecs
 import sys
 
 
 def operation(inf, outf):
+    '''
+    Stub
+    '''
     for line in inf:
-        pass
+        outf.write(line)
 
 
 def main():
-    oparser = optparse.OptionParser()
-    oparser.add_option("-i", "--input", dest="input", default="-")
-    oparser.add_option("-o", "--output", dest="output", default="-")
-    oparser.add_option(
+    '''
+    Parse arguments
+    '''
+    oparser = argparse.ArgumentParser()
+    oparser.add_argument("-i", "--input", dest="input", default="-")
+    oparser.add_argument("-o", "--output", dest="output", default="-")
+    oparser.add_argument(
         "--verbose", dest="verbose", action="store_true", default=False)
-    (opts, args) = oparser.parse_args()
+    opts = oparser.parse_args()
 
     if opts.input == "-":
         inf = sys.stdin
