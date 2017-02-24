@@ -76,6 +76,9 @@ imap [1~ <Home>
 imap [4~ <End>
 imap OF <End>
 
+" search with * in visual mode
+vnoremap * "zy:let @/ = @z<CR>n
+
 " Checking typo. Warn if the file name starts with : or ends with [ or ]
 " http://d.hatena.ne.jp/hyuki/20140211/vim
 autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
