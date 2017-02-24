@@ -1,20 +1,15 @@
 
 "JavaScript
+"  npm install -g eslint esformatter
 
-function! Js_beautify()
-"    let now_line = line(".")
-"    exec ":%! js-beautify -f - "
-"    exec ":" . now_line
-    call Preserve(':silent %!js-beautify -f -')
-endfunction
+NeoBundle 'millermedeiros/vim-esformatter'
 
-if executable('js-beautify')
-    augroup js_beautify
+if executable('esformatter')
+    augroup esformatter
         autocmd!
-        autocmd BufWrite,FileWritePre,FileAppendPre *.js call Js_beautify()
+        autocmd BufWrite,FileWritePre,FileAppendPre *.js :Esformatter
     augroup END
 endif
 
-" Shift + F for js_beautify
-autocmd FileType javascript nnoremap <S-f> :call Js_beautify()<CR>
-
+" Shift + F for esformatter
+autocmd FileType javascript nnoremap <S-f> :Esformatter<CR>
