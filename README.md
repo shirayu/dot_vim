@@ -23,15 +23,11 @@ pip install autopep8 --user
 - Type ``Shift + F`` to format
 
 ### For Javascript
-Install ``jshint`` and  ``js-beautify``
+- First, install ``node.js``. Check [the latest version](https://nodejs.org/dist/latest/)
+- Then, install ``eslint`` and  ``esformatter``
 
-- install ``node.js``
-    - Check [the latest version](https://nodejs.org/dist/latest/)
 ```
-wget https://nodejs.org/dist/latest/node-v4.0.0-linux-x64.tar.gz
-tar -C ~/local xf node-v4.0.0-linux-x64.tar.gz
-npm install -g jshint
-npm install -g js-beautify
+npm install -g eslint esformatter
 ```
 
 

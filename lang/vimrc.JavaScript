@@ -1,6 +1,5 @@
 
 "JavaScript
-"  npm install -g eslint esformatter
 
 NeoBundle 'millermedeiros/vim-esformatter'
 
