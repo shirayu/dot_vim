@@ -93,3 +93,6 @@ endfunction
 
 "Fix ambiwidth
 set ambiwidth=double
+
+"No mounse
+set mouse-=a
