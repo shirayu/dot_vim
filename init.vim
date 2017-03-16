@@ -1,0 +1,1 @@
+/home/yuta-h/.vimrc

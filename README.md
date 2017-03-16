@@ -1,6 +1,12 @@
 #.vimrc
 This is my .vimrc
 
+## NeoVim
+```
+mkdir -p .config
+ln -s ~/.vim ~/.config/nvim
+```
+
 ## Related softwares
 
 ### For Go
