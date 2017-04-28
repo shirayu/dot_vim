@@ -27,12 +27,9 @@ func main() {
 	_, err := optparser.Parse()
 
 	//show help
-	if len(os.Args) == 1 {
-		optparser.WriteHelp(os.Stdout)
-		os.Exit(0)
-	} else if err != nil {
+	if err != nil {
 		for _, arg := range os.Args {
-			if arg == "-h" {
+			if arg == "-h" || arg == "--help" {
 				os.Exit(0)
 			}
 		}
