@@ -33,6 +33,7 @@ func main() {
 				os.Exit(0)
 			}
 		}
+		//         fmt.Fprintf(os.Stderr, "%s\n", err.Error())
 		os.Exit(1)
 	}
 
