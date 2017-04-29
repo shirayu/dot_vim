@@ -1,4 +1,4 @@
-#.vimrc
+# .vimrc
 This is my .vimrc
 
 ## NeoVim
