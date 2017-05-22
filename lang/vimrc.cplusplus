@@ -20,10 +20,6 @@ let g:clang_auto = 0
 "   ln -s /usr/include/c++/4.9/ $HOME/local/llvm/include1
 "   ln -s /usr/include/x86_64-linux-gnu/c++/4.9/ $HOME/local/llvm/include2
 "   ln -s `which clang-format-3.8` ~/local/bin/clang-format
-" For basils
-"   ln -s /share/usr-x86_64/lib/ $HOME/local/llvm/lib
-"   ln -s /share/usr-x86_64/include/c++/4.9.1 $HOME/local/llvm/include1
-"   ln -s /share/usr-x86_64/include/c++/4.9.1/x86_64-unknown-linux-gnu/ $HOME/local/llvm/include2
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++ ' . " -I" . $HOME . "/local/llvm/include1 -I" . $HOME . "/local/llvm/include2"
 
