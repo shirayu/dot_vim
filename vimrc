@@ -34,20 +34,16 @@ map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
 
 
-NeoBundle 'scrooloose/syntastic'
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = { 'mode': 'active',
-    \ 'active_filetypes': '',
-    \ 'passive_filetypes': [] }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_tex_checkers=['lacheck', 'chktex']
-map sc :call <C-u>SyntasticCheck<CR>
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' . " -I" . $HOME . "/local/llvm/include1 -I" . $HOME . "/local/llvm/include2"
-let g:syntastic_go_checkers = ['go', 'govet', 'golint']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+NeoBundle 'neomake/neomake'
+let g:neomake_open_list = 2
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_tex_enabled_makers = ['lacheck', 'chktex']
+let g:neomake_cpp_eslint_maker = {
+    \ 'exe': 'clang++',
+    \ 'args': ['-std=c++11 -stdlib=libc++', '-I', $HOME . "/local/llvm/include1", '-I', $HOME . "/local/llvm/include2"]
+    \ }
+let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
 
 
 NeoBundle "thinca/vim-template"
