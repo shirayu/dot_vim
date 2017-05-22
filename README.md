@@ -3,8 +3,9 @@ This is my .vimrc
 
 ## NeoVim
 ```
-mkdir -p .config
+mkdir -p ~/.config
 ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvim/init.vim
 ```
 
 ## Related softwares
