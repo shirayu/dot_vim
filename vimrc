@@ -38,11 +38,14 @@ NeoBundle 'neomake/neomake'
 let g:neomake_open_list = 2
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_python_pylint_maker = {
+    \ 'args': ['--disable=I0011',  '--output-format=text', '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg} [{msg_id}]"', '--reports=no'],
+    \ 'errorformat': '%A%f:%l:%c:%t: %m,%A%f:%l: %m,%A%f:(%l): %m,%-Z%p^%.%#,%-G%.%#',
+    \ 'postprocess': [function('neomake#postprocess#GenericLengthPostprocess'), function('neomake#makers#ft#python#PylintEntryProcess')]
+\ }
+let g:neomake_python_enabled_makers = ['pylint']
 let g:neomake_tex_enabled_makers = ['lacheck', 'chktex']
-let g:neomake_cpp_eslint_maker = {
-    \ 'exe': 'clang++',
-    \ 'args': ['-std=c++11 -stdlib=libc++', '-I', $HOME . "/local/llvm/include1", '-I', $HOME . "/local/llvm/include2"]
-    \ }
+let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
 
 
