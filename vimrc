@@ -39,7 +39,7 @@ let g:neomake_open_list = 2
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_pylint_maker = {
-    \ 'args': ['--disable=I0011',  '--output-format=text', '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg} [{msg_id}]"', '--reports=no'],
+    \ 'args': ['--disable=I0011,I0012',  '--output-format=text', '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg} [{msg_id}]"', '--reports=no'],
     \ 'errorformat': '%A%f:%l:%c:%t: %m,%A%f:%l: %m,%A%f:(%l): %m,%-Z%p^%.%#,%-G%.%#',
     \ 'postprocess': [function('neomake#postprocess#GenericLengthPostprocess'), function('neomake#makers#ft#python#PylintEntryProcess')]
 \ }
