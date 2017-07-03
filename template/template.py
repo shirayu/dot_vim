@@ -22,10 +22,8 @@ def main():
     Parse arguments
     '''
     oparser = argparse.ArgumentParser()
-    oparser.add_argument("-i", "--input", dest="input", default="-")
-    oparser.add_argument("-o", "--output", dest="output", default="-")
-    oparser.add_argument(
-        "--verbose", dest="verbose", action="store_true", default=False)
+    oparser.add_argument("--input", "-i", default="-", required=False)
+    oparser.add_argument("--output", "-o", default="-", required=False)
     opts = oparser.parse_args()
 
     if opts.input == "-":
