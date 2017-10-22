@@ -96,3 +96,11 @@ set ambiwidth=double
 
 "No mounse
 set mouse-=a
+
+function! Nfkc()
+    "E501 line break
+    call Preserve(':silent %!perl -CSD -e ''use Unicode::Normalize;while ($line = <STDIN>){print NFKC($line)}'' ')
+endfunction
+
+" Shift + N for NFKC Unicode normalization
+nnoremap <S-n> :call Nfkc()<CR>
