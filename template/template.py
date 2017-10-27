@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-'''
-Stub
-'''
 
 import argparse
 import codecs
@@ -10,24 +7,21 @@ import sys
 
 
 def operation(inf, outf):
-    '''
-    Stub
-    '''
     for line in inf:
         outf.write(line)
 
 
-def main():
-    '''
-    Parse arguments
-    '''
+def get_opts():
     oparser = argparse.ArgumentParser()
     oparser.add_argument("--input", "-i", default="-", required=False)
     oparser.add_argument("--output", "-o", default="-", required=False)
-    opts = oparser.parse_args()
+    return oparser.parse_args()
 
+
+def main():
+    opts = get_opts()
     if opts.input == "-":
-        inf = sys.stdin
+        inf = iter(sys.stdin.readline, "")
     else:
         inf = codecs.open(opts.input, "r", "utf8")
 
