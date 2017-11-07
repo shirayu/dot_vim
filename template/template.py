@@ -4,6 +4,18 @@
 import argparse
 import codecs
 import sys
+import unittest
+
+
+class BasicTestSuite(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def test_run(self):
+        pass
 
 
 def operation(inf, outf):
