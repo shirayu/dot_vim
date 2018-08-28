@@ -39,8 +39,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 "gocode
-if exists(globpath($GOPATH, "src/github.com/nsf/gocode/vim"))
-    exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+if exists(globpath($GOPATH, "src/github.com/mdempsky/gocode/vim"))
+    exe "set rtp+=".globpath($GOPATH, "src/github.com/mdempsky/gocode/vim")
 endif
 
 

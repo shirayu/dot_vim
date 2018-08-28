@@ -12,7 +12,7 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 ### For Go
 ```
-go get -u github.com/nsf/gocode
+go get -u github.com/mdempsky/gocode
 go get -u code.google.com/p/rog-go/exp/cmd/godef
 ```
 
