@@ -3,6 +3,7 @@
 
 import argparse
 import codecs
+import contextlib
 import sys
 import unittest
 
@@ -23,6 +24,22 @@ def operation(inf, outf):
         outf.write(line)
 
 
+@contextlib.contextmanager
+def _my_open(filename, mode='r', encoding='utf8'):
+    if filename == '-':
+        if mode is None or mode == '' or 'r' in mode:
+            fh = iter(sys.stdin.readline, "")
+        else:
+            fh = sys.stdout
+    else:
+        fh = codecs.open(filename, mode, encoding)
+    try:
+        yield fh
+    finally:
+        if filename is not '-':
+            fh.close()
+
+
 def get_opts():
     oparser = argparse.ArgumentParser()
     oparser.add_argument("--input", "-i", default="-", required=False)
@@ -32,16 +49,9 @@ def get_opts():
 
 def main():
     opts = get_opts()
-    if opts.input == "-":
-        inf = iter(sys.stdin.readline, "")
-    else:
-        inf = codecs.open(opts.input, "r", "utf8")
-
-    if opts.output == "-":
-        outf = sys.stdout
-    else:
-        outf = codecs.open(opts.output, "w", "utf8")
-    operation(inf, outf)
+    with _my_open(opts.output, "w", "utf8") as inf:
+        with _my_open(opts.output, "w", "utf8") as outf:
+            operation(inf, outf)
 
 
 if __name__ == '__main__':
