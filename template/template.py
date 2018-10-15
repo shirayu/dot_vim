@@ -26,10 +26,13 @@ def operation(inf, outf):
 
 
 @contextlib.contextmanager
-def _my_open(filename, mode='r', encoding='utf8'):
+def _my_open(filename, mode='r', encoding='utf8', iterator=False):
     if filename == '-':
         if mode is None or mode == '' or 'r' in mode:
-            fh = iter(sys.stdin.readline, "")
+            if iterator:
+                fh = iter(sys.stdin.readline, "")
+            else:
+                fh = sys.stdin
         else:
             fh = sys.stdout
     elif filename.endswith('.gz'):
