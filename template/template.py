@@ -4,6 +4,7 @@
 import argparse
 import codecs
 import contextlib
+import gzip
 import sys
 import unittest
 
@@ -31,6 +32,8 @@ def _my_open(filename, mode='r', encoding='utf8'):
             fh = iter(sys.stdin.readline, "")
         else:
             fh = sys.stdout
+    elif filename.endswith('.gz'):
+        fh = gzip.open(filename, mode=mode + 't', encoding=encoding)
     else:
         fh = codecs.open(filename, mode, encoding)
     try:
