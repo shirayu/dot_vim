@@ -12,7 +12,7 @@ type cmdOptions struct {
 	Help   bool   `short:"h" long:"help" description:"Show this help message"`
 	Input  string `short:"i" long:"input" required:"true"`
 	Output string `short:"o" long:"output" required:"true"`
-	Log    bool   `long:"log" description:"Enable logging" default:"false"`
+	Log    bool   `long:"log" description:"Enable logging"`
 }
 
 func operation(opts *cmdOptions) error {
