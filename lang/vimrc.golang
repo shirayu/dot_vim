@@ -1,10 +1,5 @@
 
-
-"golang
-" First of all
-"  $ vim +GoInstallBinaries +q
-" For update
-"  $ vim +GoUpdateBinaries +q
+"For golang
 
 autocmd BufNewFile,BufRead *.go setlocal filetype=go
 autocmd FileType go setlocal tabstop=4 noexpandtab softtabstop=0

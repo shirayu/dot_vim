@@ -11,15 +11,22 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 ## Related softwares
 
 ### For Go
+
+First of all
 ```
-go get -u github.com/mdempsky/gocode
-go get -u code.google.com/p/rog-go/exp/cmd/godef
+vim +GoInstallBinaries +q
+```
+
+For update
+```
+vim +GoUpdateBinaries +q
 ```
 
 ### For python
 
 ```sh
-sudo pip3 install autopep8 pylint
+sudo apt-get -y install python3-pip
+sudo pip3 install autopep8 flake8
 ```
 
 Type ``Shift + F`` to format.
