@@ -5,6 +5,7 @@ import codecs
 import contextlib
 import gzip
 import sys
+import io
 import unittest
 
 
@@ -25,19 +26,22 @@ def operation(inf, outf):
 
 
 @contextlib.contextmanager
-def _my_open(filename, mode='r', encoding='utf8', iterator=False):
+def _my_open(filename, mode='r', encoding='utf8',
+             iterator=False, errors='backslashreplace'):
     if filename == '-':
         if mode is None or mode == '' or 'r' in mode:
             if iterator:
                 fh = iter(sys.stdin.readline, "")
             else:
-                fh = sys.stdin
+                fh = io.TextIOWrapper(sys.stdin.buffer,
+                                      encoding=encoding, errors=errors)
         else:
-            fh = sys.stdout
+            fh = io.TextIOWrapper(sys.stdout.buffer,
+                                  encoding=encoding, errors=errors)
     elif filename.endswith('.gz'):
         fh = gzip.open(filename, mode=mode + 't', encoding=encoding)
     else:
-        fh = codecs.open(filename, mode, encoding)
+        fh = codecs.open(filename, mode, encoding, errors=errors)
     try:
         yield fh
     finally:
