@@ -58,9 +58,9 @@ def get_opts():
 
 def main():
     opts = get_opts()
-    with _my_open(opts.input, "r", "utf8") as inf:
-        with _my_open(opts.output, "w", "utf8") as outf:
-            operation(inf, outf)
+    with _my_open(opts.input, "r", "utf8") as inf,\
+            _my_open(opts.output, "w", "utf8") as outf:
+        operation(inf, outf)
 
 
 if __name__ == '__main__':
