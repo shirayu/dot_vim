@@ -2,3 +2,4 @@
 .netrwhist
 init.vim
 bundle/
+dein/

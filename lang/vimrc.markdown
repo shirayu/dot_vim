@@ -1,10 +1,11 @@
 
 
 "Markdown
-NeoBundleLazy 'https://github.com/kannokanno/previm', {
+call dein#add('https://github.com/kannokanno/previm', {
+      \ "lazy" : 1,
       \ "autoload": {
       \   "filetypes": "markdown",
-      \ }}
+      \ }})
 
 if has('unix')
     let g:previm_open_cmd = 'google-chrome'
@@ -19,8 +20,9 @@ endif
 map pv :PrevimOpen<CR>
 
 
-NeoBundleLazy 'tpope/vim-markdown', {
+call dein#add('tpope/vim-markdown', {
+      \ "lazy" : 1,
       \ "autoload": {
       \   "filetypes": "markdown",
-      \ }}
+      \ }})
 

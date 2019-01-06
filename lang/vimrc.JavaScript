@@ -1,7 +1,7 @@
 
 "JavaScript
 
-NeoBundle 'millermedeiros/vim-esformatter'
+call dein#add('millermedeiros/vim-esformatter')
 
 if executable('esformatter')
     augroup esformatter

@@ -6,10 +6,11 @@ autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 
 """ Install vim-clang
-NeoBundleLazy  'justmao945/vim-clang', {
+call dein#add('justmao945/vim-clang', {
+      \ "lazy" : 1,
       \ "autoload": {
       \   "filetypes": "cpp",
-      \ }}
+      \ }})
 "For neocomplete
 let g:clang_auto = 0
 

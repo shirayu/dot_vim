@@ -5,11 +5,11 @@ function! s:meet_neocomplete_requirements()
 endfunction
 
 if s:meet_neocomplete_requirements()
-    NeoBundle 'Shougo/neocomplete.vim'
-    NeoBundleFetch 'Shougo/neocomplcache.vim'
+    call dein#add('Shougo/neocomplete.vim')
+    call dein#add('Shougo/neocomplcache.vim')
 else
-    NeoBundleFetch 'Shougo/neocomplete.vim'
-    NeoBundle 'Shougo/neocomplcache.vim'
+    call dein#add('Shougo/neocomplete.vim')
+    call dein#add('Shougo/neocomplcache.vim')
 endif
 
 if s:meet_neocomplete_requirements() "For neocomplete

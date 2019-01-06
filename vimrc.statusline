@@ -1,8 +1,8 @@
 "http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
 
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
+call dein#add('itchyny/lightline.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
 
 
 " vim-gitgutter

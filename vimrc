@@ -1,18 +1,16 @@
 "To Install
-"   $ vi +NeoBundleInstall +q
-"To Update
-"   $ vi +NeoBundleUpdate +q
-"To Clean
-"   $ vi +NeoBundleClean +q
-"To gc
-"   $ find ~/.vim/bundle -maxdepth 1 -mindepth 1 -type d -follow |  xargs -i bash -c 'cd {}; git gc'
+"   mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
+"    git clone https://github.com/Shougo/dein.vim.git \
+"     ~/.vim/dein/repos/github.com/Shougo/dein.vim
+" :call dein#install()
 
 set nocompatible
 filetype off
 
-set runtimepath+=~/.vim/bundle/neobundle.vim
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+call dein#begin(expand('~/.vim/dein'))
+call dein#add('Shougo/dein.vim')
 
 
 "Call my original setting
@@ -25,16 +23,16 @@ source ~/.vim/vimrc.commentify
 source ~/.vim/vimrc.vimux
 
 
-NeoBundle 'vim-scripts/renamer.vim'
+call dein#add('vim-scripts/renamer.vim')
 
-NeoBundle 'vim-scripts/yanktmp.vim'
+call dein#add('vim-scripts/yanktmp.vim')
 let g:yanktmp_file = '/tmp/.' . $USER . '.vimyanktmp'
 map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
 
 
-NeoBundle 'neomake/neomake'
+call dein#add('neomake/neomake')
 let g:neomake_open_list = 2
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
@@ -44,24 +42,24 @@ let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
 
 
-NeoBundle "thinca/vim-template"
+call dein#add('thinca/vim-template')
 
-NeoBundle "rhysd/clever-f.vim"
+call dein#add('rhysd/clever-f.vim')
 
-NeoBundle 'Shougo/vimproc.vim', {
+call dein#add('Shougo/vimproc.vim', {
       \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
       \     'cygwin' : 'make -f make_cygwin.mak',
       \     'mac' : 'make -f make_mac.mak',
       \     'unix' : 'make -f make_unix.mak',
       \    },
-      \ }
+      \ })
 
 "Underlines the word under the cursor
-NeoBundle 'itchyny/vim-cursorword'
+call dein#add('itchyny/vim-cursorword')
 
 "language specific setting
-NeoBundle 'shirayu/nosql.vim'
+call dein#add('shirayu/nosql.vim')
 source ~/.vim/lang/vimrc.latex
 source ~/.vim/lang/vimrc.markdown
 source ~/.vim/lang/vimrc.python
@@ -77,11 +75,12 @@ augroup QfAutoCommands
     autocmd WinEnter * if (winnr('$') == 1) && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix' | quit | endif
 augroup END
 
-call neobundle#end()
 
+call dein#end()
 
-NeoBundleCheck
-
+if dein#check_install()
+    call dein#install()
+endif
 
 "Finally vim calls these
 " http://mattn.kaoriya.net/software/vim/20120618123848.htm

@@ -1,7 +1,7 @@
 
 "Comment out
 "
-NeoBundle 'https://github.com/hrp/EnhancedCommentify'
+call dein#add('https://github.com/hrp/EnhancedCommentify')
 
 function EnhCommentifyCallback(ft)
     if a:ft == 'markdown'
