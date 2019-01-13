@@ -1,3 +1,0 @@
-
-call dein#add('https://github.com/benmills/vimux')
-

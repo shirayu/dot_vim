@@ -23,7 +23,6 @@ source ~/.vim/vimrc.general
 source ~/.vim/vimrc.statusline
 source ~/.vim/vimrc.complete
 source ~/.vim/vimrc.commentify
-source ~/.vim/vimrc.vimux
 
 
 call dein#add('vim-scripts/renamer.vim')
