@@ -45,7 +45,7 @@ def _my_open(filename, mode='r', encoding='utf8',
     try:
         yield fh
     finally:
-        if filename is not '-':
+        if filename != '-':
             fh.close()
 
 
