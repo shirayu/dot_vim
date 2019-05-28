@@ -1,19 +1,17 @@
 
-"complete
-" For Vim8, you need
-"   pip3 install --upgrade neovim
-"
-call dein#add('Shougo/deoplete.nvim')
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-endif
-let g:deoplete#enable_at_startup = 1
- call deoplete#custom#option({
-    \ 'smart_case': v:true,
-    \ 'camel_case': v:true,
-    \ })
-"    \ 'auto_complete_delay': 200,
+
+" https://github.com/prabirshrestha/vim-lsp/wiki
+
+call dein#add('prabirshrestha/async.vim')
+call dein#add('prabirshrestha/vim-lsp')
+call dein#add('prabirshrestha/asyncomplete.vim')
+call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 
 
-set completeopt=menuone
+let g:lsp_async_completion = 0
+let g:lsp_diagnostics_enabled = 0
+" debug
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+" let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+

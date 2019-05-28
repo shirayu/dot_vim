@@ -5,29 +5,17 @@
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 
-""" Install vim-clang
-call dein#add('justmao945/vim-clang', {
-      \ "lazy" : 1,
-      \ "autoload": {
-      \   "filetypes": "cpp",
-      \ }})
-"For neocomplete
-let g:clang_auto = 0
-
-" These operations are needed when you update LLVM
-" Please make symbolic links like for debian
-"   sudo aptitude install clang libclang clang-format-3.8
-"   ln -s /usr/lib/llvm-3.5/lib $HOME/local/llvm/lib
-"   ln -s /usr/include/c++/4.9/ $HOME/local/llvm/include1
-"   ln -s /usr/include/x86_64-linux-gnu/c++/4.9/ $HOME/local/llvm/include2
-"   ln -s `which clang-format-3.8` ~/local/bin/clang-format
-let g:clang_c_options = '-std=c11'
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++ ' . " -I" . $HOME . "/local/llvm/include1 -I" . $HOME . "/local/llvm/include2"
-
-
-" default 'longest' can not work with neocomplete
-let g:clang_c_completeopt = 'menuone'
-let g:clang_cpp_completeopt = 'menuone'
+if executable('clangd')
+  augroup LspCpp
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+    autocmd FileType c,cpp setlocal omnifunc=lsp#complete
+  augroup END
+endif
 
 
 """ clang-format

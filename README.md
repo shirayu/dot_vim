@@ -10,23 +10,25 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 ## Related softwares
 
+
 ### For Go
 
-First of all
-```
+```sh
+# First of all
 vim +GoInstallBinaries +q
+# For update
+vim +GoUpdateBinaries +q
+# language server
+go get -u golang.org/x/tools/cmd/gopls
 ```
 
-For update
-```
-vim +GoUpdateBinaries +q
-```
 
 ### For python
 
 ```sh
 sudo apt-get -y install python3-pip
 sudo pip3 install autopep8 flake8
+pip3 install python-language-server
 ```
 
 Type ``Shift + F`` to format.
@@ -36,7 +38,7 @@ Type ``Shift + F`` to format.
 - Then, install ``eslint`` and  ``esformatter``
 
 ```
-npm install -g eslint esformatter
+npm install -g eslint esformatter typescript typescript-language-server
 ```
 
 
