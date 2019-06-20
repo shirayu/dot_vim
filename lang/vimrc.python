@@ -17,12 +17,12 @@ endif
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 
-""" autopep8
-function! Autopep8()
+function! FormatPython()
     "E501 line break
     call Preserve(':silent %!autopep8 --ignore=E501 -')
+    call Preserve(':silent %!isort -')
 endfunction
 
-" Shift + F for autopep8
-autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
+" Shift + F for FormatPython
+autocmd FileType python nnoremap <S-f> :call FormatPython()<CR>
 
