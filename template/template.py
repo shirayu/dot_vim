@@ -4,8 +4,8 @@ import argparse
 import codecs
 import contextlib
 import gzip
-import sys
 import io
+import sys
 import unittest
 
 
