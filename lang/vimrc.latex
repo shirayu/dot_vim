@@ -9,3 +9,4 @@ set grepprg=grep\ -nH\ $*
 let g:Tex_FoldedSections     = ""
 let g:Tex_FoldedEnvironments = ""
 let g:Tex_FoldedMisc         = ""
+let g:tex_flavor = "latex"
