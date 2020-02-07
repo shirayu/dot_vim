@@ -6,6 +6,7 @@ import contextlib
 import gzip
 import io
 import sys
+import typing
 import unittest
 
 
@@ -20,14 +21,16 @@ class BasicTestSuite(unittest.TestCase):
         pass
 
 
-def operation(inf, outf):
+def operation(inf: typing.IO[str], outf: typing.IO[str]) -> None:
     for line in inf:
         outf.write(line)
 
 
 @contextlib.contextmanager
-def _my_open(filename, mode='r', encoding='utf8',
-             iterator=False, errors='backslashreplace'):
+def smart_open(filename: str, mode: str = 'r', encoding: str = 'utf8',
+               iterator: bool = False, errors: str = 'backslashreplace') \
+        -> typing.Iterator[typing.IO[str]]:
+    fh: typing.Any = None
     if filename == '-':
         if mode is None or mode == '' or 'r' in mode:
             if iterator:
@@ -45,21 +48,21 @@ def _my_open(filename, mode='r', encoding='utf8',
     try:
         yield fh
     finally:
-        if filename != '-':
+        if not iterator and filename != '-':
             fh.close()
 
 
-def get_opts():
+def get_opts() -> argparse.Namespace:
     oparser = argparse.ArgumentParser()
     oparser.add_argument("--input", "-i", default="-", required=False)
     oparser.add_argument("--output", "-o", default="-", required=False)
     return oparser.parse_args()
 
 
-def main():
+def main() -> None:
     opts = get_opts()
-    with _my_open(opts.input, "r", "utf8") as inf,\
-            _my_open(opts.output, "w", "utf8") as outf:
+    with smart_open(opts.input, "r", "utf8") as inf,\
+            smart_open(opts.output, "w", "utf8") as outf:
         operation(inf, outf)
 
 
