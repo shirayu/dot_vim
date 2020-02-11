@@ -33,7 +33,7 @@ go get -u golang.org/x/tools/cmd/gopls
 
 ```sh
 sudo apt-get -y install python3-pip
-pip3 install autopep8 flake8 isort python-language-server
+pip3 install autopep8 flake8 isort python-language-server mypy
 ```
 
 Type ``Shift + F`` to format.

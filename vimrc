@@ -38,7 +38,8 @@ call dein#add('neomake/neomake')
 let g:neomake_open_list = 2
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_python_enabled_makers = ['flake8', 'mypy']
+let g:neomake_python_mypy_args = neomake#makers#ft#python#mypy().args + ['--python-version', '3.7']
 let g:neomake_tex_enabled_makers = ['lacheck', 'chktex']
 let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
