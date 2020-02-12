@@ -13,6 +13,6 @@ let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
 
 if filereadable('.markdownlint.json')
     let g:neomake_markdown_markdownlint_args = ['-c', '.markdownlint.json']
-elseif filereadable($HOME . '.markdownlint.json')
+elseif filereadable($HOME . '/.markdownlint.json')
     let g:neomake_markdown_markdownlint_args = ['-c', '~/.markdownlint.json']
 endif
