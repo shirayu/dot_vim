@@ -35,6 +35,8 @@ map sP :call YanktmpPaste_P()<CR>
 
 source ~/.vim/vimrc.neomake
 
+call dein#add('thinca/vim-template')
+
 call dein#add('rhysd/clever-f.vim')
 
 call dein#add('Shougo/vimproc.vim', {
