@@ -53,13 +53,9 @@ call dein#add('itchyny/vim-cursorword')
 
 "language specific setting
 call dein#add('shirayu/nosql.vim')
-source ~/.vim/lang/vimrc.latex
-source ~/.vim/lang/vimrc.markdown
-source ~/.vim/lang/vimrc.python
-source ~/.vim/lang/vimrc.golang
-source ~/.vim/lang/vimrc.cplusplus
-source ~/.vim/lang/vimrc.pukiwiki
-source ~/.vim/lang/vimrc.JavaScript
+for f in split(glob('~/.vim/lang/*'), '\n')
+        exe 'source' f
+endfor
 
 augroup QfAutoCommands
   autocmd!
