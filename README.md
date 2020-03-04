@@ -38,6 +38,15 @@ pip3 install autopep8 flake8 isort python-language-server mypy
 
 Type ``Shift + F`` to format.
 
+### For shellscript
+
+```sh
+sudo apt -y install shellcheck
+GO111MODULE=on go get mvdan.cc/sh/v3/cmd/shfmt
+# or
+wget https://github.com/mvdan/sh/releases/download/v3.0.2/shfmt_v3.0.2_linux_amd64 -O shfmt ; chmod a+x shfmt
+```
+
 ### For Javascript
 
 - First, install ``node.js``. Check [the latest version](https://nodejs.org/dist/latest/)
