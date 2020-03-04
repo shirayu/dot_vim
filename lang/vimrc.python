@@ -19,8 +19,8 @@ autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,exc
 
 function! FormatPython()
     "E501 line break
-    call Preserve(':silent %!isort -')
-    call Preserve(':silent %!autopep8 --ignore=E501 -')
+    call ExecForTexts('isort', '-')
+    call ExecForTexts('autopep8', '--ignore=E501 -')
 endfunction
 
 " Shift + F for FormatPython

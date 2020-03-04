@@ -1,8 +1,4 @@
 
-function! FormatShell()
-    call Preserve(':silent %!shfmt')
-endfunction
-
 " Shift + F
-autocmd FileType sh nnoremap <S-f> :call FormatShell()<CR>
+autocmd FileType sh,zsh,csh nnoremap <S-f> :call ExecForTexts("shfmt", "")<CR>
 

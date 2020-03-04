@@ -1,5 +1,5 @@
 "use vim not vi
-set nocompatible 
+set nocompatible
 
 "show numbers
 set number
@@ -126,3 +126,13 @@ function! Nfkc()
     call Preserve(':silent %!perl -CSD -e ''use Unicode::Normalize;while ($line = <STDIN>){print NFKC($line)}'' ')
 endfunction
 command! Nfkc :call Nfkc()
+
+
+function! ExecForTexts(command, args)
+    if executable(a:command)
+        call Preserve(':silent %!' . a:command . ' ' . a:args)
+    else
+        echohl ErrorMsg | echo a:command . " not installed!" | echohl None
+    endif
+endfunction
+
