@@ -21,9 +21,11 @@ class BasicTestSuite(unittest.TestCase):
         pass
 
 
-def operation(inf: typing.IO[str], outf: typing.IO[str]) -> None:
-    for line in inf:
-        outf.write(line)
+def operation(path_in: str, path_out: str) -> None:
+    with smart_open(path_in, "r", "utf8") as inf,\
+            smart_open(path_out, "w", "utf8") as outf:
+        for line in inf:
+            outf.write(line)
 
 
 @contextlib.contextmanager
@@ -61,9 +63,7 @@ def get_opts() -> argparse.Namespace:
 
 def main() -> None:
     opts = get_opts()
-    with smart_open(opts.input, "r", "utf8") as inf,\
-            smart_open(opts.output, "w", "utf8") as outf:
-        operation(inf, outf)
+    operation(opts.input, opts.output)
 
 
 if __name__ == '__main__':
