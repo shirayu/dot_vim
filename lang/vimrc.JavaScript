@@ -11,16 +11,18 @@ if executable('typescript-language-server')
 endif
 
 
-
-
 call dein#add('millermedeiros/vim-esformatter')
-
-if executable('esformatter')
-    augroup esformatter
-        autocmd!
-        autocmd BufWrite,FileWritePre,FileAppendPre *.js :Esformatter
-    augroup END
-endif
 
 " Shift + F for esformatter
 autocmd FileType javascript nnoremap <S-f> :Esformatter<CR>
+
+
+function! FormatHtml()
+    call ExecForTexts('html-beautify', '')
+endfunction
+autocmd FileType html nnoremap <S-f> :call FormatHtml()<CR>
+
+function! FormatCss()
+    call ExecForTexts('css-beautify', '')
+endfunction
+autocmd FileType css nnoremap <S-f> :call FormatCss()<CR>
