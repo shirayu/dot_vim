@@ -52,9 +52,10 @@ wget https://github.com/mvdan/sh/releases/download/v3.0.2/shfmt_v3.0.2_linux_amd
 
 - First, install ``node.js``. Check [the latest version](https://nodejs.org/dist/latest/)
 - Then, install ``eslint`` and  ``esformatter``
+- ``css-beautify`` and ``html-beautify`` are included in ``js-beautify``
 
 ```sh
-npm install -g eslint esformatter typescript typescript-language-server
+npm install -g eslint esformatter typescript typescript-language-server js-beautify
 ```
 
 ### For C++
