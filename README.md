@@ -16,6 +16,17 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 pip3 install neovim
 ```
 
+## Install
+
+```sh
+mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
+git clone https://github.com/Shougo/dein.vim.git \
+ ~/.vim/dein/repos/github.com/Shougo/dein.vim
+vi +':call dein#install()' +q
+
+vi +':call dein#update()' +q
+```
+
 ## Related softwares
 
 ### For Go
