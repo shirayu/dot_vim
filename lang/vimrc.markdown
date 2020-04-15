@@ -2,9 +2,9 @@
 
 "Markdown
 call dein#add('https://github.com/kannokanno/previm', {
-      \ "lazy" : 1,
-      \ "autoload": {
-      \   "filetypes": "markdown",
+      \ 'lazy' : 1,
+      \ 'autoload': {
+      \   'filetypes': 'markdown',
       \ }})
 
 if has('unix')
@@ -21,8 +21,8 @@ map pv :PrevimOpen<CR>
 
 
 call dein#add('tpope/vim-markdown', {
-      \ "lazy" : 1,
-      \ "autoload": {
-      \   "filetypes": "markdown",
+      \ 'lazy' : 1,
+      \ 'autoload': {
+      \   'filetypes': 'markdown',
       \ }})
 

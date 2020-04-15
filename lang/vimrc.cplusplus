@@ -20,9 +20,9 @@ endif
 
 """ clang-format
 function! s:clang_format()
-  let now_line = line(".")
+  let now_line = line('.')
   exec ":%! clang-format -style='{BasedOnStyle: llvm, IndentWidth: 4}'"
-  exec ":" . now_line
+  exec ':' . now_line
 endfunction
 
 if executable('clang-format')

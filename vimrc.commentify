@@ -1,14 +1,12 @@
 
-"Comment out
-"
 call dein#add('https://github.com/hrp/EnhancedCommentify')
 
 function EnhCommentifyCallback(ft)
-    if a:ft == 'markdown'
+    if a:ft ==? 'markdown'
         let b:ECcommentOpen = '<!-- '
         let b:ECcommentMiddle = ' '
         let b:ECcommentClose = ' -->'
-    elseif a:ft == 'pukiwiki'
+    elseif a:ft ==? 'pukiwiki'
         let b:ECcommentOpen = '// '
         let b:ECcommentMiddle = ''
         let b:ECcommentClose = ''

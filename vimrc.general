@@ -1,5 +1,5 @@
-"use vim not vi
-set nocompatible
+set encoding=utf-8
+scriptencoding utf-8
 
 "show numbers
 set number
@@ -10,7 +10,6 @@ set shortmess+=I
 "encoding
 set fileencoding=utf-8	"to
 set fileencodings=utf-8,euc-jp,shift-jis,iso-2022-jp,utf-16	"from
-set encoding=utf-8
 
 "do not stop cusor at Begin and end of line
 set whichwrap=b,s,h,l,<,>,[,]
@@ -132,7 +131,7 @@ function! ExecForTexts(command, args)
     if executable(a:command)
         call Preserve(':silent %!' . a:command . ' ' . a:args)
     else
-        echohl ErrorMsg | echo a:command . " not installed!" | echohl None
+        echohl ErrorMsg | echo a:command . ' not installed!' | echohl None
     endif
 endfunction
 

@@ -1,4 +1,5 @@
 
+ " vint: -ProhibitSetNoCompatible
 set nocompatible
 filetype off
 
