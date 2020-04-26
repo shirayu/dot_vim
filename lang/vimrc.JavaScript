@@ -15,6 +15,7 @@ call dein#add('millermedeiros/vim-esformatter')
 
 " Shift + F for esformatter
 autocmd FileType javascript nnoremap <S-f> :Esformatter<CR>
+autocmd FileType json nnoremap <S-f> :Esformatter<CR>
 
 
 function! FormatHtml()
