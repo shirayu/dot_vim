@@ -15,7 +15,12 @@ call dein#add('millermedeiros/vim-esformatter')
 
 " Shift + F for esformatter
 autocmd FileType javascript nnoremap <S-f> :Esformatter<CR>
-autocmd FileType json nnoremap <S-f> :Esformatter<CR>
+
+
+function! FormatJson()
+    call ExecForTexts('python3', '-c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False,sort_keys=True))"')
+endfunction
+autocmd FileType json nnoremap <S-f> :call FormatJson()<CR>
 
 
 function! FormatHtml()
