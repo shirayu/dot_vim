@@ -1,8 +1,8 @@
 
 "For golang
 
-autocmd BufNewFile,BufRead *.go setlocal filetype=go
-autocmd FileType go setlocal tabstop=4 noexpandtab softtabstop=0
+autocmd myvimrc BufNewFile,BufRead *.go setlocal filetype=go
+autocmd myvimrc FileType go setlocal tabstop=4 noexpandtab softtabstop=0
 
 call dein#add('https://github.com/fatih/vim-go', {
       \ 'lazy' : 1,
@@ -16,16 +16,16 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
 let g:go_disable_autoinstall = 1
 
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <leader>gb <Plug>(go-build)
-au FileType go nmap <leader>gt <Plug>(go-test)
-au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>gl :GoLint<CR>
+au myvimrc FileType go nmap <Leader>i <Plug>(go-info)
+au myvimrc FileType go nmap <Leader>gd <Plug>(go-doc)
+au myvimrc FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au myvimrc FileType go nmap <leader>gb <Plug>(go-build)
+au myvimrc FileType go nmap <leader>gt <Plug>(go-test)
+au myvimrc FileType go nmap gd <Plug>(go-def)
+au myvimrc FileType go nmap <Leader>ds <Plug>(go-def-split)
+au myvimrc FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au myvimrc FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au myvimrc FileType go nmap <Leader>gl :GoLint<CR>
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -36,12 +36,12 @@ let g:go_highlight_build_constraints = 1
 
 
 if executable('gopls')
-  au User lsp_setup call lsp#register_server({
+  au myvimrc User lsp_setup call lsp#register_server({
               \ 'name': 'gopls',
               \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
               \ 'whitelist': ['go'],
               \ })
-  autocmd BufWritePre *.go LspDocumentFormatSync
+  autocmd myvimrc BufWritePre *.go LspDocumentFormatSync
 elseif executable('go-langserver')
   augroup LspGo
     au!
@@ -68,5 +68,5 @@ endif
 let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 
 
-autocmd FileType go :highlight goErr cterm=bold ctermfg=214
-autocmd FileType go :match goErr /\<err\>/
+autocmd myvimrc FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd myvimrc FileType go :match goErr /\<err\>/

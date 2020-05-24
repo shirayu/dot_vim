@@ -8,6 +8,9 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/dein.vim')
 
+augroup myvimrc
+  autocmd!
+augroup END
 
 "Call my original setting
 source ~/.vim/vimrc.general

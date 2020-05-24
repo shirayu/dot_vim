@@ -2,7 +2,8 @@
 call dein#add('neomake/neomake')
 
 let g:neomake_open_list = 2
-autocmd! BufWritePost * Neomake
+
+autocmd myvimrc BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_enabled_makers = ['flake8', 'mypy']
 let g:neomake_python_mypy_args = neomake#makers#ft#python#mypy().args + ['--python-version', '3.7']

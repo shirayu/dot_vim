@@ -49,13 +49,13 @@ set novisualbell
 syntax on
 
 "swig
-au BufNewFile,BufRead *.i set filetype=swig
-au BufNewFile,BufRead *.swg set filetype=swig
+au myvimrc BufNewFile,BufRead *.i set filetype=swig
+au myvimrc BufNewFile,BufRead *.swg set filetype=swig
 
 "wdiff
-au BufNewFile,BufRead *.wdiff set filetype=wdiff
-autocmd FileType wdiff hi Special    cterm=None ctermfg=Red
-autocmd FileType wdiff hi Identifier cterm=None ctermfg=Green
+au myvimrc BufNewFile,BufRead *.wdiff set filetype=wdiff
+autocmd myvimrc FileType wdiff hi Special    cterm=None ctermfg=Red
+autocmd myvimrc FileType wdiff hi Identifier cterm=None ctermfg=Green
 
 
 "show underline
@@ -80,7 +80,7 @@ vnoremap * "zy:let @/ = @z<CR>n
 
 " Checking typo. Warn if the file name starts with : or ends with [ or ]
 " http://d.hatena.ne.jp/hyuki/20140211/vim
-autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
+autocmd myvimrc BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
 function! s:write_check_typo(file)
     let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
     let input = input(prompt)
