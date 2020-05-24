@@ -19,6 +19,7 @@ source ~/.vim/vimrc.general
 source ~/.vim/vimrc.statusline
 source ~/.vim/vimrc.complete
 source ~/.vim/vimrc.commentify
+source ~/.vim/vimrc.cursor
 
 
 call dein#add('vim-scripts/renamer.vim')
@@ -32,8 +33,6 @@ map sP :call YanktmpPaste_P()<CR>
 source ~/.vim/vimrc.neomake
 
 call dein#add('thinca/vim-template')
-
-call dein#add('rhysd/clever-f.vim')
 
 call dein#add('Shougo/vimproc.vim', {
       \ 'build' : {
