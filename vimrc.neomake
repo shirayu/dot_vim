@@ -18,5 +18,7 @@ elseif filereadable($HOME . '/.markdownlint.json')
     let g:neomake_markdown_markdownlint_args = ['-c', '~/.markdownlint.json']
 endif
 
+let g:neomake_sh_shellcheck_args = neomake#makers#ft#sh#shellcheck().args + ['-e', 'SC1090,SC2059,SC2155,SC2164']
+
 let g:neomake_zsh_enabled_makers = ['shellcheck']
-let g:neomake_zsh_shellcheck_args = neomake#makers#ft#sh#shellcheck().args + ['--shell', 'bash']
+let g:neomake_zsh_shellcheck_args = neomake#makers#ft#sh#shellcheck().args + ['--shell', 'bash', '-e', 'SC1090,SC2059,SC2155,SC2164']
