@@ -1,6 +1,10 @@
 # .vimrc
 
-This is my .vimrc
+Update plugins.
+
+```vi
+:call dein#update()
+```
 
 ## NeoVim
 
