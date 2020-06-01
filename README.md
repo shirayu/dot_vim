@@ -1,9 +1,9 @@
 # .vimrc
 
-Update plugins.
 
-```vi
-:call dein#update()
+```sh
+# Update plugins
+vi '+:call dein#update()' '+q'
 ```
 
 ## NeoVim
