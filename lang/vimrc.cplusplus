@@ -5,19 +5,6 @@
 autocmd myvimrc FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 
-if executable('clangd')
-  augroup LspCpp
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
-    autocmd FileType c,cpp setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-
 """ clang-format
 function! s:clang_format()
   let now_line = line('.')

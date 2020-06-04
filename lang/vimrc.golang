@@ -35,26 +35,6 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 
-if executable('gopls')
-  au myvimrc User lsp_setup call lsp#register_server({
-              \ 'name': 'gopls',
-              \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-              \ 'whitelist': ['go'],
-              \ })
-  autocmd myvimrc BufWritePre *.go LspDocumentFormatSync
-elseif executable('go-langserver')
-  augroup LspGo
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'go-lang',
-        \ 'cmd': {server_info->['go-langserver', '-mode', 'stdio', '-gocodecompletion']},
-        \ 'whitelist': ['go'],
-        \ })
-    autocmd FileType go setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-
 "For neocomplete
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
