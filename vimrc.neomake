@@ -11,6 +11,12 @@ let g:neomake_tex_enabled_makers = ['lacheck']
 let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
 
+if filereadable('.eslintrc.json')
+    let g:neomake_javascript_eslint_args = ['--config', '.eslintrc.json']
+elseif filereadable($HOME . '/.eslintrc.json')
+    let g:neomake_javascript_eslint_args = ['--config', '~/.eslintrc.json']
+endif
+
 
 if filereadable('.markdownlint.json')
     let g:neomake_markdown_markdownlint_args = ['-c', '.markdownlint.json']
