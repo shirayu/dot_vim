@@ -3,6 +3,10 @@
 set nocompatible
 filetype off
 
+if v:version < 802
+    echoerr 'May be too old Vim version: "' . v:version . '".'
+endif
+
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin(expand('~/.vim/dein'))
