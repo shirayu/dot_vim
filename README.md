@@ -27,6 +27,7 @@ git clone https://github.com/Shougo/dein.vim.git \
  ~/.vim/dein/repos/github.com/Shougo/dein.vim
 vi +':call dein#install()' +q
 
+npm install markdownlint-cli esformatter eslint js-beautify
 vi +':call dein#update()' +q
 ```
 
