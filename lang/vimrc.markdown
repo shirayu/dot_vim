@@ -1,4 +1,5 @@
 
+let s:script_dir = expand('<sfile>:p:h')
 
 "Markdown
 call dein#add('https://github.com/kannokanno/previm', {
@@ -26,3 +27,8 @@ call dein#add('tpope/vim-markdown', {
       \   'filetypes': 'markdown',
       \ }})
 
+
+function! FixMd()
+    call ExecForTexts('bash', s:script_dir . '/../markdownfix.bash')
+endfunction
+autocmd myvimrc FileType markdown nnoremap <S-f> :call FixMd()<CR>
