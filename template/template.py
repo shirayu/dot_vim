@@ -1,63 +1,22 @@
 #!/usr/bin/env python3
 
 import argparse
-import codecs
-import contextlib
-import gzip
-import io
-import sys
-import typing
-import unittest
+from pathlib import Path
 
 
-class BasicTestSuite(unittest.TestCase):
-    def setUp(self):
-        pass
-
-    def tearDown(self):
-        pass
-
-    def test_run(self):
-        pass
-
-
-def operation(path_in: str, path_out: str) -> None:
-    with smart_open(path_in, "r", "utf8") as inf,\
-            smart_open(path_out, "w", "utf8") as outf:
+def operation(path_in: Path, path_out: Path) -> None:
+    with path_in.open() as inf,\
+            path_out.open('w') as outf:
         for line in inf:
             outf.write(line)
 
 
-@contextlib.contextmanager
-def smart_open(filename: str, mode: str = 'r', encoding: str = 'utf8',
-               iterator: bool = False, errors: str = 'backslashreplace') \
-        -> typing.Iterator[typing.IO[str]]:
-    fh: typing.Any = None
-    if filename == '-':
-        if mode is None or mode == '' or 'r' in mode:
-            if iterator:
-                fh = iter(sys.stdin.readline, "")
-            else:
-                fh = io.TextIOWrapper(sys.stdin.buffer,
-                                      encoding=encoding, errors=errors)
-        else:
-            fh = io.TextIOWrapper(sys.stdout.buffer,
-                                  encoding=encoding, errors=errors)
-    elif filename.endswith('.gz'):
-        fh = gzip.open(filename, mode=mode + 't', encoding=encoding)
-    else:
-        fh = codecs.open(filename, mode, encoding, errors=errors)
-    try:
-        yield fh
-    finally:
-        if not iterator and filename != '-':
-            fh.close()
-
-
 def get_opts() -> argparse.Namespace:
     oparser = argparse.ArgumentParser()
-    oparser.add_argument("--input", "-i", default="-", required=False)
-    oparser.add_argument("--output", "-o", default="-", required=False)
+    oparser.add_argument("--input", "-i", type=Path,
+                         default='/dev/stdin', required=False)
+    oparser.add_argument("--output", "-o", type=Path,
+                         default="/dev/stdout", required=False)
     return oparser.parse_args()
 
 
