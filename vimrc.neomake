@@ -21,9 +21,9 @@ let g:neomake_python_mypy_args = neomake#makers#ft#python#mypy().args + ['--pyth
 autocmd myvimrc FileType typescript,javascript call ExecCheck('eslint')
 let g:neomake_javascript_enabled_makers = ['eslint']
 if filereadable('.eslintrc.json')
-    let g:neomake_javascript_eslint_args = ['--config', '.eslintrc.json']
+    let g:neomake_javascript_eslint_args = ['--config', '.eslintrc.json', '-f' , 'json']
 elseif filereadable($HOME . '/.eslintrc.json')
-    let g:neomake_javascript_eslint_args = ['--config', '~/.eslintrc.json']
+    let g:neomake_javascript_eslint_args = ['--config', '~/.eslintrc.json', '-f' , 'json']
 endif
 
 
