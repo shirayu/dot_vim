@@ -27,10 +27,13 @@ git clone https://github.com/Shougo/dein.vim.git \
  ~/.vim/dein/repos/github.com/Shougo/dein.vim
 vi +':call dein#install()' +q
 
-npm -g install markdownlint-cli esformatter eslint js-beautify
 vi +':call dein#update()' +q
+
+./setup_coc.sh
 ```
 
-## Links
+[You may need](https://stackoverflow.com/questions/66653234/vim-eslint-not-approved-or-denied-yet) the following command in vim.
 
-- [vim-lsp の導入コストを下げるプラグイン vim-lsp-settings を書いた](https://qiita.com/mattn/items/e62b9f16bc487a271a7f)
+```txt
+:CocCommand eslint.showOutputChannel
+```

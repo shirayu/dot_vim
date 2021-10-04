@@ -23,11 +23,10 @@ augroup END
 source ~/.vim/vimrc.general
 
 "Call complex plugins
+source ~/.vim/vimrc.coc
 source ~/.vim/vimrc.statusline
-source ~/.vim/vimrc.complete
 source ~/.vim/vimrc.commentify
 source ~/.vim/vimrc.cursor
-
 
 call dein#add('vim-scripts/renamer.vim')
 
@@ -36,8 +35,6 @@ let g:yanktmp_file = '/tmp/.' . $USER . '.vimyanktmp'
 map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
-
-source ~/.vim/vimrc.neomake
 
 call dein#add('thinca/vim-template')
 
