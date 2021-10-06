@@ -1,10 +1,12 @@
 
 "JavaScript
 
-call dein#add('millermedeiros/vim-esformatter')
+function! FormatJavaScript()
+    call ExecForTexts('esformatter', '/dev/stdin')
+endfunction
 
 " Shift + F for esformatter
-autocmd myvimrc FileType javascript nnoremap <S-f> :Esformatter<CR>
+autocmd myvimrc FileType javascript nnoremap <S-f> :call FormatJavaScript()<CR>
 
 
 function! FormatJson()
