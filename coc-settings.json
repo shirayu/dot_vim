@@ -6,5 +6,6 @@
         "sh": "shfmt"
     },
     "diagnostic.checkCurrentLine": true,
+    "htmlhint.options": {},
     "python.linting.flake8Enabled": true
 }
