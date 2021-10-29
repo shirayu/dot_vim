@@ -1,4 +1,7 @@
 {
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python"
+    ],
     "diagnostic-languageserver.filetypes": {
         "sh": "shellcheck"
     },
@@ -7,5 +10,6 @@
     },
     "diagnostic.checkCurrentLine": true,
     "htmlhint.options": {},
+    "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true
 }

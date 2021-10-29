@@ -5,9 +5,7 @@ autocmd myvimrc FileType python setl smartindent cinwords=if,elif,else,for,while
 
 
 function! FormatPython()
-    "E501 line break
     call ExecForTexts('isort', '-')
-    call ExecForTexts('autopep8', '--ignore=E501 -')
 endfunction
 
 " Shift + F for FormatPython
