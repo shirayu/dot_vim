@@ -3,7 +3,10 @@
         "python"
     ],
     "diagnostic-languageserver.filetypes": {
-        "sh": "shellcheck"
+        "sh": "shellcheck",
+        "yaml": [
+            "yamllint"
+        ]
     },
     "diagnostic-languageserver.formatFiletypes": {
         "sh": "shfmt"
