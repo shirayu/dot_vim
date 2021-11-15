@@ -6,8 +6,14 @@ autocmd myvimrc FileType python setl smartindent cinwords=if,elif,else,for,while
 
 function! FormatPython()
     call ExecForTexts('isort', '-')
+    call CocAction('format') " If coc is not ready, this raises an error
 endfunction
 
 " Shift + F for FormatPython
 autocmd myvimrc FileType python nnoremap <S-f> :call FormatPython()<CR>
 
+" https://github.com/neoclide/coc.nvim/issues/3441#issuecomment-949255590
+aug python
+  au!
+  au BufWrite *.py call FormatPython()
+aug END

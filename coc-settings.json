@@ -1,6 +1,5 @@
 {
     "coc.preferences.formatOnSaveFiletypes": [
-        "python"
     ],
     "diagnostic-languageserver.filetypes": {
         "sh": "shellcheck",
