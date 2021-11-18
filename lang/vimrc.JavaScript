@@ -1,11 +1,13 @@
 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 "JavaScript
 
 function! FormatJavaScript()
-    call ExecForTexts('esformatter', '/dev/stdin')
+    Prettier
 endfunction
 
-" Shift + F for esformatter
+" Shift + F
 autocmd myvimrc FileType javascript nnoremap <S-f> :call FormatJavaScript()<CR>
 
 
