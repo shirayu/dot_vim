@@ -28,6 +28,7 @@ call dein#add('tpope/vim-markdown', {
       \ }})
 
 
+" npm -g i markdownlint-cli
 function! FixMd()
     call ExecCheck('markdownlint')
     call ExecForTexts('bash', s:script_dir . '/../markdownfix.bash')
