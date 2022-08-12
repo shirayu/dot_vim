@@ -20,3 +20,5 @@ tags
 
 # additional
 dein
+# Symlink to vimrc
+init.vim
