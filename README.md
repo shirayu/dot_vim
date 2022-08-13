@@ -1,8 +1,9 @@
 # .vimrc
 
+## Vim
+
 ```sh
-# Update plugins
-vi '+:call dein#update()' '+q'
+pip3 install neovim
 ```
 
 ## NeoVim
@@ -13,12 +14,6 @@ ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 ```
 
-## Vim
-
-```sh
-pip3 install neovim
-```
-
 ## Install
 
 ```sh
@@ -27,8 +22,10 @@ git clone https://github.com/Shougo/dein.vim.git \
  ~/.vim/dein/repos/github.com/Shougo/dein.vim
 vi +':call dein#install()' +q
 
+# Update plugins
 vi +':call dein#update()' +q
 
+# Setup CoC
 ./setup_coc.sh
 ```
 
@@ -36,4 +33,10 @@ vi +':call dein#update()' +q
 
 ```txt
 :CocCommand eslint.showOutputChannel
+```
+
+## Change default editor
+
+```bash
+sudo update-alternatives --config editor
 ```
