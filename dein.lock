@@ -1,1 +1,19 @@
-{"vim-markdown":"feadbc81e27f277187c29957ec6114f1e95f2162","vim-easymotion":"b3cfab2a6302b3b39f53d9fd2cd997e1127d7878","vim-gitgutter":"400a12081f188f3fb639f8f962456764f39c6ff1","previm":"3f96f82af0ab3998c39a64e51c2e8fe50ed2ecd1","EnhancedCommentify":"70c166ce692b0344fa6b17ad89775b7caaf0608e","vim-go":"0550762a69a2ef13d9f723c9478155dbc6ad7ddb","vim-cursorword":"371fdd7fa8817c28aa09d181cfcfa3c7ca29bf56","vim-fugitive":"23b9b9b2a3b88bdefee8dfd1126efb91e34e1a57","vim-template":"2eb0a87998a8666e73298852f1a0e56e5a4fae52","vim-latex":"069a26a0963adb6a9de9f40f5a7332c7207d5423","dein.vim":"d92f8c91eb9ff600d8d33265ce0a2574c0b86f5d","nosql.vim":"a58a051fb92df4df0baae7dc761ddae0f1263b89","coc.nvim":"2125b0e2f2f7d44df5c583b8d4cc40feecf33117","vim-pukiwiki-syntax":"d808a7554bc9808a69aacd30a84176b948397386","lightline.vim":"b1e91b41f5028d65fa3d31a425ff21591d5d957f","renamer.vim":"3ff8fb7bf2f1210e640fb59f3316a42de4296a2a","yanktmp.vim":"6fe8bf72ca4fd4dff1ef5e239fd032f39fc04c12"}
+{
+    "vim-markdown": "feadbc81e27f277187c29957ec6114f1e95f2162",
+    "vim-easymotion": "b3cfab2a6302b3b39f53d9fd2cd997e1127d7878",
+    "vim-gitgutter": "00df1089b6267f47c7c0f13536789feb9db1e65b",
+    "previm": "dcda34b72f6b224602b02a179d4f35e06e53d465",
+    "EnhancedCommentify": "70c166ce692b0344fa6b17ad89775b7caaf0608e",
+    "vim-go": "8c4db1c61432511a3aa55971dabb2171cbcba7b1",
+    "vim-cursorword": "371fdd7fa8817c28aa09d181cfcfa3c7ca29bf56",
+    "vim-fugitive": "99cdb88bc64063dc4656ae53496f06fb2a394cd4",
+    "vim-template": "2eb0a87998a8666e73298852f1a0e56e5a4fae52",
+    "vim-latex": "069a26a0963adb6a9de9f40f5a7332c7207d5423",
+    "dein.vim": "f330965d02fd7a9eef26226569da40de06250e80",
+    "nosql.vim": "a58a051fb92df4df0baae7dc761ddae0f1263b89",
+    "coc.nvim": "95b43f67147391cf2c69e550bd001b742781d226",
+    "vim-pukiwiki-syntax": "d808a7554bc9808a69aacd30a84176b948397386",
+    "lightline.vim": "b1e91b41f5028d65fa3d31a425ff21591d5d957f",
+    "renamer.vim": "3ff8fb7bf2f1210e640fb59f3316a42de4296a2a",
+    "yanktmp.vim": "6fe8bf72ca4fd4dff1ef5e239fd032f39fc04c12"
+}

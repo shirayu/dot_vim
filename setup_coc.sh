@@ -12,7 +12,9 @@ if [[ $1 == "load" ]]; then
     vi +':call dein#load_rollback(expand("~/.vim/dein.lock"))' +q
 else
     vi +':call dein#update()' +q
-    vi +':call dein#save_rollback("$HOME/.vim/dein.lock")' +q
+    vi +':call dein#save_rollback("$HOME/.vim/dein.lock.tmp")' +q
+    python -m json.tool <"$HOME/.vim/dein.lock.tmp" >"$HOME/.vim/dein.lock"
+    rm "$HOME/.vim/dein.lock.tmp"
 fi
 
 pip install -U isort black
