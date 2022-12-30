@@ -5,8 +5,10 @@ ExistCmd() {
     type "$1"
 }
 
-ExistCmd pip || exit 1
 ExistCmd npm || exit 1
+ExistCmd pip || exit 1
+ExistCmd python || exit 1
+ExistCmd vim || exit 1
 
 if [[ $1 == "load" ]]; then
     vi +':call dein#load_rollback(expand("~/.vim/dein.lock"))' +q
