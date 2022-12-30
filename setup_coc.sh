@@ -11,10 +11,10 @@ ExistCmd python || exit 1
 ExistCmd vim || exit 1
 
 if [[ $1 == "load" ]]; then
-    vi +':call dein#load_rollback(expand("~/.vim/dein.lock"))' +q
+    vim +':call dein#load_rollback(expand("~/.vim/dein.lock"))' +q
 else
-    vi +':call dein#update()' +q
-    vi +':call dein#save_rollback("$HOME/.vim/dein.lock.tmp")' +q
+    vim +':call dein#update()' +q
+    vim +':call dein#save_rollback("$HOME/.vim/dein.lock.tmp")' +q
     python -m json.tool <"$HOME/.vim/dein.lock.tmp" >"$HOME/.vim/dein.lock"
     rm "$HOME/.vim/dein.lock.tmp"
 fi
