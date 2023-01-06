@@ -22,11 +22,11 @@ git clone https://github.com/Shougo/dein.vim.git \
  ~/.vim/dein/repos/github.com/Shougo/dein.vim
 vi +':call dein#install()' +q
 
-# Update plugins
-vi +':call dein#update()' +q
+# Setup plugins
+./setup.sh load
 
-# Setup CoC
-./setup_coc.sh
+# Update plugins
+./setup.sh update
 ```
 
 [You may need](https://stackoverflow.com/questions/66653234/vim-eslint-not-approved-or-denied-yet) the following command in vim.
