@@ -22,8 +22,8 @@ elif [[ $1 == "update" ]]; then
     python -m json.tool <"$HOME/.vim/lock/dein.lock.json.tmp" >"$HOME/.vim/lock/dein.lock.json"
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
 
-    pip install -U isort black
-    pip list | grep -e 'isort' -e 'black' | sed -r 's/\s+/==/' > "$HOME/.vim/lock/pip.lock"
+    pip install -U isort black flake8
+    pip list | grep -e 'isort' -e 'black' -e 'flake8' | sed -r 's/\s+/==/' > "$HOME/.vim/lock/pip.lock"
 
 else
     echo -e "\nUsage: $0 [load|update]" >&2
