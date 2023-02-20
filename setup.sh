@@ -2,7 +2,7 @@
 
 ExistCmd() {
     echo "Checking $1"
-    type "$1" || echo "$2"
+    type "$1" || (echo "$2" && exit 1)
 }
 
 ExistCmd npm || exit 1
