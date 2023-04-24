@@ -14,7 +14,7 @@ ExistCmd yarn "Install: npm i --global yarn && asdf reshim"|| exit 1 # For coc-v
 if [[ $1 == "load" ]]; then
     vim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
 
-    xargs -t pip install < "$HOME/.vim/lock/pip.lock"
+    xargs -t pip install < "$HOME/.vim/lock/pip.lock.txt"
 
 elif [[ $1 == "update" ]]; then
     vim +':call dein#update()' +q
@@ -23,8 +23,8 @@ elif [[ $1 == "update" ]]; then
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
 
     pip install -U isort black flake8
-    pip list | grep -e 'isort' -e 'black' -e 'flake8' | perl -pe 's/\s+/==/' > "$HOME/.vim/lock/pip.lock"
-    cp "$HOME/.config/coc/extensions/package.json" "$HOME/.vim/lock/pip.lock"
+    pip list | grep -e 'isort' -e 'black' -e 'flake8' | perl -pe 's/\s+/==/' > "$HOME/.vim/lock/pip.lock.txt"
+    cp "$HOME/.config/coc/extensions/package.json" "$HOME/.vim/lock/coc.package.json"
 else
     echo -e "\nUsage: $0 [load|update]" >&2
     exit 1
