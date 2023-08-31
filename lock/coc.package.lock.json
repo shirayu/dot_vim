@@ -1,0 +1,49 @@
+{
+  "name": "extensions",
+  "dependencies": {
+    "coc-css": {
+      "version": "2.0.0",
+      "overridden": false
+    },
+    "coc-diagnostic": {
+      "version": "0.24.0",
+      "overridden": false
+    },
+    "coc-eslint": {
+      "version": "1.6.0",
+      "overridden": false
+    },
+    "coc-htmlhint": {
+      "version": "0.6.1",
+      "overridden": false
+    },
+    "coc-json": {
+      "version": "1.8.0",
+      "overridden": false
+    },
+    "coc-markdownlint": {
+      "version": "1.30.0",
+      "overridden": false
+    },
+    "coc-prettier": {
+      "version": "9.3.2",
+      "overridden": false
+    },
+    "coc-pyright": {
+      "version": "1.1.320",
+      "overridden": false
+    },
+    "coc-texlab": {
+      "version": "3.2.1",
+      "overridden": false
+    },
+    "coc-tsserver": {
+      "version": "2.1.3",
+      "overridden": false
+    },
+    "coc-yaml": {
+      "version": "1.9.0",
+      "overridden": false
+    }
+  }
+}

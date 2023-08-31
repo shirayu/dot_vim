@@ -9,12 +9,12 @@ ExistCmd npm || exit 1
 ExistCmd pip || exit 1
 ExistCmd python || exit 1
 ExistCmd vim || exit 1
-ExistCmd yarn "Install: npm i --global yarn && asdf reshim"|| exit 1 # For coc-vim
+ExistCmd yarn "Install: npm i --global yarn && asdf reshim" || exit 1 # For coc-vim
 
 if [[ $1 == "load" ]]; then
     vim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
 
-    xargs -t pip install < "$HOME/.vim/lock/pip.lock.txt"
+    xargs -t pip install <"$HOME/.vim/lock/pip.lock.txt"
 
 elif [[ $1 == "update" ]]; then
     vim +':call dein#update()' +q
@@ -23,7 +23,7 @@ elif [[ $1 == "update" ]]; then
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
 
     pip install -U isort black flake8
-    pip list | grep -e 'isort' -e 'black' -e 'flake8' | perl -pe 's/\s+/==/' > "$HOME/.vim/lock/pip.lock.txt"
+    pip list | grep -e 'isort' -e 'black' -e 'flake8' | perl -pe 's/\s+/==/' >"$HOME/.vim/lock/pip.lock.txt"
     cp "$HOME/.config/coc/extensions/package.json" "$HOME/.vim/lock/coc.package.json"
 else
     echo -e "\nUsage: $0 [load|update]" >&2
@@ -33,3 +33,7 @@ fi
 npm update --location=global markdownlint-cli esformatter eslint js-beautify
 vim -c \
     'CocInstall coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier'
+(
+    cd "$HOME/.config/coc/extensions/node_modules" || exit 1
+    npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
+)
