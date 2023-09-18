@@ -2,7 +2,7 @@
   "name": "extensions",
   "dependencies": {
     "coc-css": {
-      "version": "2.0.0",
+      "version": "2.1.0",
       "overridden": false
     },
     "coc-diagnostic": {
@@ -18,7 +18,7 @@
       "overridden": false
     },
     "coc-json": {
-      "version": "1.8.0",
+      "version": "1.9.2",
       "overridden": false
     },
     "coc-markdownlint": {
@@ -30,11 +30,11 @@
       "overridden": false
     },
     "coc-pyright": {
-      "version": "1.1.320",
+      "version": "1.1.325",
       "overridden": false
     },
     "coc-texlab": {
-      "version": "3.2.1",
+      "version": "3.3.0",
       "overridden": false
     },
     "coc-tsserver": {
