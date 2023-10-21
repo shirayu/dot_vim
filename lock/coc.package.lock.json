@@ -6,7 +6,7 @@
       "overridden": false
     },
     "coc-diagnostic": {
-      "version": "0.24.0",
+      "version": "0.24.1",
       "overridden": false
     },
     "coc-eslint": {
@@ -22,7 +22,7 @@
       "overridden": false
     },
     "coc-markdownlint": {
-      "version": "1.30.0",
+      "version": "1.31.1",
       "overridden": false
     },
     "coc-prettier": {
@@ -30,7 +30,7 @@
       "overridden": false
     },
     "coc-pyright": {
-      "version": "1.1.325",
+      "version": "1.1.332",
       "overridden": false
     },
     "coc-texlab": {
