@@ -11,10 +11,15 @@ endfunction
 autocmd myvimrc FileType javascript nnoremap <S-f> :call FormatJavaScript()<CR>
 
 
+function! FormatJsonNoSort()
+    call ExecForTexts('python3', '-c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False))"')
+endfunction
+autocmd myvimrc FileType json nnoremap <S-f> :call FormatJsonNoSort()<CR>
+
 function! FormatJson()
     call ExecForTexts('python3', '-c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False,sort_keys=True))"')
 endfunction
-autocmd myvimrc FileType json nnoremap <S-f> :call FormatJson()<CR>
+autocmd myvimrc FileType json nnoremap <S-s> :call FormatJson()<CR>
 
 
 function! FormatHtml()
