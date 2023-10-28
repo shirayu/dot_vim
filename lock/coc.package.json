@@ -7,7 +7,7 @@
     "coc-json": ">=1.9.2",
     "coc-markdownlint": ">=1.31.1",
     "coc-prettier": ">=9.3.2",
-    "coc-pyright": ">=1.1.332",
+    "coc-pyright": ">=1.1.333",
     "coc-texlab": ">=3.3.0",
     "coc-tsserver": ">=2.1.4",
     "coc-yaml": ">=1.9.0"
