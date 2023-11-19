@@ -30,7 +30,10 @@ else
     exit 1
 fi
 
+npm install --location=global markdownlint-cli esformatter eslint js-beautify
 npm update --location=global markdownlint-cli esformatter eslint js-beautify
+asdf reshim
+
 vim -c \
     'CocInstall coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier'
 (
