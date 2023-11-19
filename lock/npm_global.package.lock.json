@@ -1,0 +1,32 @@
+{
+  "name": "lib",
+  "dependencies": {
+    "esformatter": {
+      "version": "0.11.3",
+      "overridden": false
+    },
+    "eslint": {
+      "version": "8.54.0",
+      "overridden": false,
+      "dependencies": {
+        "@eslint-community/eslint-utils": {
+          "version": "4.4.0",
+          "overridden": false,
+          "dependencies": {
+            "eslint": {
+              "version": "8.54.0"
+            }
+          }
+        }
+      }
+    },
+    "js-beautify": {
+      "version": "1.14.11",
+      "overridden": false
+    },
+    "markdownlint-cli": {
+      "version": "0.37.0",
+      "overridden": false
+    }
+  }
+}
