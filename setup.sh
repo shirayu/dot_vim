@@ -30,11 +30,11 @@ else
     exit 1
 fi
 
-NPM_PACKAGES="global markdownlint-cli esformatter eslint js-beautify"
+NPM_PACKAGES="markdownlint-cli esformatter eslint js-beautify"
 eval npm install --location=global "${NPM_PACKAGES}"
 eval npm update --location=global "${NPM_PACKAGES}"
 asdf reshim
-npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.lock.json"
+eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.lock.json"
 
 vim -c \
     'CocInstall coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier'
