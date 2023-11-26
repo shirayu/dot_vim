@@ -11,10 +11,13 @@ call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
 " https://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html#popup-window3
 " https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-box
 hi Pmenu guifg=#f8f6f2 ctermfg=15 guibg=#35322d ctermbg=236
-hi PmenuSel guifg=#000000 ctermfg=16 gui=bold cterm=bold
+"hi PmenuSel guifg=#000000 ctermfg=16 gui=bold cterm=bold
 hi PmenuSbar guibg=#35322d ctermbg=236
 hi PmenuThumb guifg=#d9cec3 ctermfg=252
 
+"https://stackoverflow.com/questions/73240488
+"https://h2plus.biz/hiromitsu/entry/674
+hi CocMenuSel ctermfg=230 ctermbg=197 guibg=#13354A
 
 " Some servers have issues with backup files, see #649.
 set nobackup
