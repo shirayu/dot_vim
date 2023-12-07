@@ -6,7 +6,7 @@
       "overridden": false
     },
     "eslint": {
-      "version": "8.54.0",
+      "version": "8.55.0",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -14,7 +14,7 @@
           "overridden": false,
           "dependencies": {
             "eslint": {
-              "version": "8.54.0"
+              "version": "8.55.0"
             }
           }
         }
