@@ -24,7 +24,6 @@ elif [[ $1 == "update" ]]; then
 
     pip install -U isort black flake8
     pip list --disable-pip-version-check | grep -e 'isort' -e 'black' -e 'flake8' | perl -pe 's/\s+/==/' >"$HOME/.vim/lock/pip.lock.txt"
-    cp "$HOME/.config/coc/extensions/package.json" "$HOME/.vim/lock/coc.package.json"
 else
     echo -e "\nUsage: $0 [load|update]" >&2
     exit 1
