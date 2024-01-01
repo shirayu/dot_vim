@@ -6,7 +6,7 @@
       "overridden": false
     },
     "eslint": {
-      "version": "8.55.0",
+      "version": "8.56.0",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -14,7 +14,7 @@
           "overridden": false,
           "dependencies": {
             "eslint": {
-              "version": "8.55.0"
+              "version": "8.56.0"
             }
           }
         }
@@ -25,7 +25,7 @@
       "overridden": false
     },
     "markdownlint-cli": {
-      "version": "0.37.0",
+      "version": "0.38.0",
       "overridden": false
     }
   }
