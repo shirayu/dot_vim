@@ -5,7 +5,6 @@ autocmd myvimrc FileType python setl smartindent cinwords=if,elif,else,for,while
 
 
 function! FormatPython()
-    call ExecForTexts('isort', '-')
     call CocAction('format') " If coc is not ready, this raises an error
 endfunction
 

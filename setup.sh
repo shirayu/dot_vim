@@ -22,8 +22,8 @@ elif [[ $1 == "update" ]]; then
     python -m json.tool <"$HOME/.vim/lock/dein.lock.json.tmp" >"$HOME/.vim/lock/dein.lock.json"
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
 
-    pip install -U isort black flake8
-    pip list --disable-pip-version-check | grep -e 'isort' -e 'black' -e 'flake8' | perl -pe 's/\s+/==/' >"$HOME/.vim/lock/pip.lock.txt"
+    pip install -U ruff
+    pip list --disable-pip-version-check | grep -e 'ruff' | perl -pe 's/\s+/==/' >"$HOME/.vim/lock/pip.lock.txt"
 else
     echo -e "\nUsage: $0 [load|update]" >&2
     exit 1
@@ -36,7 +36,7 @@ asdf reshim
 eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.lock.json"
 
 vim -c \
-    'CocInstall coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier'
+    'CocInstall coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier @yaegassy/coc-ruff' -c ':q'
 (
     cd "$HOME/.config/coc/extensions/node_modules" || exit 1
     npm list --json >"$HOME/.vim/lock/coc.package.lock.json"

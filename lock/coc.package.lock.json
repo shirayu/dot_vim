@@ -1,6 +1,10 @@
 {
   "name": "extensions",
   "dependencies": {
+    "@yaegassy/coc-ruff": {
+      "version": "0.5.8",
+      "overridden": false
+    },
     "coc-css": {
       "version": "2.1.0",
       "overridden": false
@@ -30,7 +34,7 @@
       "overridden": false
     },
     "coc-pyright": {
-      "version": "1.1.345",
+      "version": "1.1.347",
       "overridden": false
     },
     "coc-texlab": {

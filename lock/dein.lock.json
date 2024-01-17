@@ -9,11 +9,11 @@
     "vim-fugitive": "59659093581aad2afacedc81f009ed6a4bfad275",
     "vim-template": "2eb0a87998a8666e73298852f1a0e56e5a4fae52",
     "vim-latex": "5987380b4ff4c960c99c02df1d379a639ac461a7",
-    "dein.vim": "f41352ff650fb5ba646d59abf6f438557364d5ff",
+    "dein.vim": "d685588366c7e6e8a01d0ff266966dda439912db",
     "nosql.vim": "a58a051fb92df4df0baae7dc761ddae0f1263b89",
     "coc.nvim": "7b9e1ef0a1399907c51d23b6080b94a5aba4a654",
     "vim-pukiwiki-syntax": "d808a7554bc9808a69aacd30a84176b948397386",
-    "lightline.vim": "1c6b455c0445b8bc1c4c16ba569a43c6348411cc",
+    "lightline.vim": "58c97bc21c6f657d3babdd4eefce7593e30e75ce",
     "renamer.vim": "3ff8fb7bf2f1210e640fb59f3316a42de4296a2a",
     "yanktmp.vim": "6fe8bf72ca4fd4dff1ef5e239fd032f39fc04c12"
 }
