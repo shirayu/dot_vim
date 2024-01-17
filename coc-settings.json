@@ -13,7 +13,5 @@
     "htmlhint.options": {},
     "pyright.inlayHints.functionReturnTypes": false,
     "pyright.inlayHints.parameterTypes": false,
-    "pyright.inlayHints.variableTypes": false,
-    "python.formatting.provider": "black",
-    "python.linting.flake8Enabled": true
+    "pyright.inlayHints.variableTypes": false
 }
