@@ -5,7 +5,10 @@ autocmd myvimrc FileType python setl smartindent cinwords=if,elif,else,for,while
 
 
 function! FormatPython()
-    call CocAction('format') " If coc is not ready, this raises an error
+    " If coc is not ready, this raises an error
+    CocCommand ruff.executeFormat 
+    CocCommand ruff.executeOrganizeImports
+    CocCommand ruff.executeAutofix
 endfunction
 
 " Shift + F for FormatPython
