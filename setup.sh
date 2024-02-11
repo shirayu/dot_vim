@@ -35,8 +35,7 @@ eval npm update --location=global "${NPM_PACKAGES}"
 asdf reshim
 eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.lock.json"
 
-vim -c \
-    'CocInstall coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier @yaegassy/coc-ruff' -c ':q'
+vim -c 'CocInstall coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier @yaegassy/coc-ruff'
 (
     cd "$HOME/.config/coc/extensions/node_modules" || exit 1
     npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
