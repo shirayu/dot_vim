@@ -22,8 +22,6 @@ elif [[ $1 == "update" ]]; then
     python -m json.tool <"$HOME/.vim/lock/dein.lock.json.tmp" >"$HOME/.vim/lock/dein.lock.json"
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
 
-    pip install -U ruff
-    pip list --disable-pip-version-check | grep -e 'ruff' | perl -pe 's/\s+/==/' >"$HOME/.vim/lock/pip.lock.txt"
 else
     echo -e "\nUsage: $0 [load|update]" >&2
     exit 1
@@ -38,7 +36,11 @@ eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.l
 vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier @yaegassy/coc-ruff' +qall
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
+# Runing ":CocCommand ruff.builtin.installServer" may be needed after update coc-ruff
+# https://github.com/shirayu/coc-ruff?tab=readme-ov-file#bult-in-install
+
 (
     cd "$HOME/.config/coc/extensions/node_modules" || exit 1
     npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
+    ~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv/bin/pip list --disable-pip-version-check | grep -e 'ruff' | perl -pe 's/\s+/==/' >"$HOME/.vim/lock/pip.lock.txt"
 )
