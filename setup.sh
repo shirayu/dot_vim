@@ -9,7 +9,7 @@ ExistCmd npm || exit 1
 ExistCmd pip || exit 1
 ExistCmd python || exit 1
 ExistCmd vim || exit 1
-ExistCmd yarn "Install: npm i --global yarn && asdf reshim" || exit 1 # For coc-vim
+ExistCmd yarn "Install: npm i --global yarn" || exit 1 # For coc-vim
 
 if [[ $1 == "load" ]]; then
     vim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
@@ -30,13 +30,13 @@ fi
 NPM_PACKAGES="markdownlint-cli esformatter eslint js-beautify"
 eval npm install --location=global "${NPM_PACKAGES}"
 eval npm update --location=global "${NPM_PACKAGES}"
-asdf reshim
 eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.lock.json"
 
 vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier @yaegassy/coc-ruff' +qall
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
 # Runing ":CocCommand ruff.builtin.installServer" may be needed after update coc-ruff
+# Any problem? : Clean ~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv/ and re-run
 # https://github.com/shirayu/coc-ruff?tab=readme-ov-file#bult-in-install
 
 (
