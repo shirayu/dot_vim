@@ -6,7 +6,7 @@
     "EnhancedCommentify": "70c166ce692b0344fa6b17ad89775b7caaf0608e",
     "vim-go": "0e975560df38be387cca1d7d33df7a4744091303",
     "vim-cursorword": "371fdd7fa8817c28aa09d181cfcfa3c7ca29bf56",
-    "vim-fugitive": "9f92ff14d9d1169e08f197a2250fcaea88e9c767",
+    "vim-fugitive": "011cf4fcb93a9649ffc6dcdff56ef948f5d0f7cc",
     "vim-template": "2eb0a87998a8666e73298852f1a0e56e5a4fae52",
     "vim-latex": "5987380b4ff4c960c99c02df1d379a639ac461a7",
     "dein.vim": "a9c6854b99dc9ef589f07b60d2c475a40f7916b1",
