@@ -32,7 +32,7 @@ eval npm install --location=global "${NPM_PACKAGES}"
 eval npm update --location=global "${NPM_PACKAGES}"
 eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.lock.json"
 
-vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-prettier @yaegassy/coc-ruff' +qall
+vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-eslint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh coc-prettier @yaegassy/coc-ruff' +qall
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
 # Runing ":CocCommand ruff.builtin.installServer" may be needed after update coc-ruff

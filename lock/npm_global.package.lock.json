@@ -21,7 +21,7 @@
       }
     },
     "js-beautify": {
-      "version": "1.14.11",
+      "version": "1.15.1",
       "overridden": false
     },
     "markdownlint-cli": {
