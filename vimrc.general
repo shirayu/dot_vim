@@ -41,6 +41,7 @@ set hlsearch    " 検索マッチテキストをハイライト
 set showmatch           " 対応する括弧などをハイライト表示する
 set matchpairs& matchpairs+=<:> "対応括弧に'<'と'>'のペアを追加
 set backspace=indent,eol,start " バックスペースでせるようにする
+set nf="" " 0padding like 003 -> Decimal number not octal number
 
 "no bells
 set t_vb=
