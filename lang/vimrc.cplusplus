@@ -4,20 +4,3 @@
 
 autocmd myvimrc FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
-
-""" clang-format
-function! s:clang_format()
-  let now_line = line('.')
-  exec ":%! clang-format -style='{BasedOnStyle: llvm, IndentWidth: 4}'"
-  exec ':' . now_line
-endfunction
-
-if executable('clang-format')
-  augroup cpp_clang_format
-    autocmd!
-    autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
-    autocmd BufWrite,FileWritePre,FileAppendPre *.cc call s:clang_format()
-    autocmd BufWrite,FileWritePre,FileAppendPre *.h call s:clang_format()
-  augroup END
-endif
-
