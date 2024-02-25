@@ -78,6 +78,11 @@ imap [1~ <Home>
 imap [4~ <End>
 imap OF <End>
 
+" Disable Ctrl-z (suspend)
+" https://vi.stackexchange.com/a/9833
+nnoremap <c-z> <nop>
+
+
 " search with * in visual mode
 vnoremap * "zy:let @/ = @z<CR>n
 
