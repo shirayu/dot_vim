@@ -27,7 +27,7 @@ else
     exit 1
 fi
 
-NPM_PACKAGES="markdownlint-cli esformatter eslint js-beautify"
+NPM_PACKAGES="markdownlint-cli eslint"
 eval npm install --location=global "${NPM_PACKAGES}"
 eval npm update --location=global "${NPM_PACKAGES}"
 eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.lock.json"
