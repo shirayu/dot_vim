@@ -1,5 +1,4 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": [],
     "diagnostic-languageserver.filetypes": {
         "sh": "shellcheck",
         "yaml": [
