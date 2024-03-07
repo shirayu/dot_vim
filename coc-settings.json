@@ -1,4 +1,5 @@
 {
+    "prettier.trailingComma" : "all",
     "diagnostic-languageserver.filetypes": {
         "sh": "shellcheck",
         "yaml": [
