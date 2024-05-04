@@ -2,7 +2,7 @@
   "name": "lib",
   "dependencies": {
     "eslint": {
-      "version": "9.1.1",
+      "version": "9.2.0",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -10,7 +10,7 @@
           "overridden": false,
           "dependencies": {
             "eslint": {
-              "version": "9.1.1"
+              "version": "9.2.0"
             }
           }
         }
