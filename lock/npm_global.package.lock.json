@@ -1,20 +1,9 @@
 {
   "name": "lib",
   "dependencies": {
-    "eslint": {
-      "version": "9.5.0",
-      "overridden": false,
-      "dependencies": {
-        "@eslint-community/eslint-utils": {
-          "version": "4.4.0",
-          "overridden": false,
-          "dependencies": {
-            "eslint": {
-              "version": "9.5.0"
-            }
-          }
-        }
-      }
+    "@biomejs/biome": {
+      "version": "1.8.2",
+      "overridden": false
     },
     "markdownlint-cli": {
       "version": "0.41.0",
