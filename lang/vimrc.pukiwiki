@@ -1,6 +1,0 @@
-
-call dein#add('https://github.com/ytsunetsune/vim-pukiwiki-syntax', {
-      \ 'lazy' : 1,
-      \ 'autoload': {
-      \   'filetypes': 'pukiwiki',
-      \ }})
