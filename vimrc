@@ -27,14 +27,9 @@ source ~/.vim/vimrc.coc
 source ~/.vim/vimrc.statusline
 source ~/.vim/vimrc.commentify
 source ~/.vim/vimrc.cursor
+source ~/.vim/vimrc.yanktmp
 
 call dein#add('vim-scripts/renamer.vim')
-
-call dein#add('vim-scripts/yanktmp.vim')
-let g:yanktmp_file = '/tmp/.' . $USER . '.vimyanktmp'
-map sy :call YanktmpYank()<CR>
-map sp :call YanktmpPaste_p()<CR>
-map sP :call YanktmpPaste_P()<CR>
 
 call dein#add('thinca/vim-template')
 
