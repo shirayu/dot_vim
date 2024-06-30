@@ -37,7 +37,6 @@ call dein#add('thinca/vim-template')
 call dein#add('itchyny/vim-cursorword')
 
 "language specific setting
-call dein#add('shirayu/nosql.vim')
 for f in split(glob('~/.vim/lang/*'), '\n')
         exe 'source' f
 endfor
