@@ -6,7 +6,16 @@
 "    :CocInstall coc-markdownlint
 
 
-call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+call dein#add('neoclide/coc.nvim', {
+\    'merged':0,
+\    'rev': 'release',
+\    'hook_add': "set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}",
+\ })
+
+" About `hook_add`:
+"   (Neo)Vim's native statusline support.
+"   Please see `:h coc-status` for integrations with external plugins that provide custom statusline: lightline.vim, vim-airline.
+
 
 " https://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html#popup-window3
 " https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-box
@@ -145,10 +154,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
