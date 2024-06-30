@@ -20,14 +20,12 @@ augroup myvimrc
 augroup END
 
 "Call my original setting
-source ~/.vim/vimrc.general
+source ~/.vim/general.vimrc
 
 "Call complex plugins
-source ~/.vim/vimrc.coc
-source ~/.vim/vimrc.statusline
-source ~/.vim/vimrc.commentify
-source ~/.vim/vimrc.cursor
-source ~/.vim/vimrc.yanktmp
+for f in split(glob('~/.vim/common/*'), '\n')
+        exe 'source' f
+endfor
 
 call dein#add('vim-scripts/renamer.vim')
 
