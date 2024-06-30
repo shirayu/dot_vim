@@ -58,9 +58,6 @@ au myvimrc BufNewFile,BufRead *.wdiff set filetype=wdiff
 autocmd myvimrc FileType wdiff hi Special    cterm=None ctermfg=Red
 autocmd myvimrc FileType wdiff hi Identifier cterm=None ctermfg=Green
 
-"JSONL
-autocmd myvimrc BufNewFile,BufRead *.jsonl set filetype=json
-
 "show underline
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
