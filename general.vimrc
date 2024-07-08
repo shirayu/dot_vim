@@ -7,6 +7,9 @@ set number
 "not show the message
 set shortmess+=I
 
+"no history
+let g:netrw_dirhistmax = 0
+
 "encoding
 set fileencoding=utf-8	"to
 set fileencodings=utf-8,euc-jp,shift-jis,iso-2022-jp,utf-16	"from
