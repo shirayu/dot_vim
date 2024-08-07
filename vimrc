@@ -29,7 +29,7 @@ for f in split(glob('~/.vim/common/*'), '\n')
         exe 'source' f
 endfor
 
-call dein#add('vim-scripts/renamer.vim')
+call dein#add('qpkorr/vim-renamer')
 
 " Default template
 call dein#add('thinca/vim-template')
