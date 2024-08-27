@@ -14,7 +14,7 @@ let g:netrw_dirhistmax = 0
 set fileencoding=utf-8	"to
 set fileencodings=utf-8,euc-jp,shift-jis,iso-2022-jp,utf-16	"from
 
-"do not stop cusor at Begin and end of line
+"do not stop cursor at Begin and end of line
 set whichwrap=b,s,h,l,<,>,[,]
 
 "type F3 toggles paste mode
