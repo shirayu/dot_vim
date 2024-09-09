@@ -1,14 +1,8 @@
 {
   "name": "extensions",
-  "problems": [
-    "extraneous: coc-htmlhint-5d7bbc52-915a-4f33-8363-54608c579dc2@npm:coc-htmlhint@0.6.1 /home/yuta-h/.config/coc/extensions/node_modules/coc-htmlhint-5d7bbc52-915a-4f33-8363-54608c579dc2",
-    "extraneous: coc-json-d0f6a705-bb8e-488e-bfc1-b8e731a26c49@ /home/yuta-h/.config/coc/extensions/node_modules/coc-json-d0f6a705-bb8e-488e-bfc1-b8e731a26c49",
-    "extraneous: coc-markdownlint-b1bfef53-df93-4344-8a40-22441f740e92@ /home/yuta-h/.config/coc/extensions/node_modules/coc-markdownlint-b1bfef53-df93-4344-8a40-22441f740e92",
-    "extraneous: coc-pyright-14df8804-5f68-488b-9337-c9f635363b61@npm:coc-pyright@1.1.348 /home/yuta-h/.config/coc/extensions/node_modules/coc-pyright-14df8804-5f68-488b-9337-c9f635363b61"
-  ],
   "dependencies": {
     "@yaegassy/coc-ruff": {
-      "version": "0.7.4",
+      "version": "0.7.5",
       "overridden": false
     },
     "coc-biome": {
@@ -23,47 +17,17 @@
       "version": "0.24.1",
       "overridden": false
     },
-    "coc-htmlhint-5d7bbc52-915a-4f33-8363-54608c579dc2": {
-      "version": "0.6.1",
-      "overridden": false,
-      "extraneous": true,
-      "problems": [
-        "extraneous: coc-htmlhint-5d7bbc52-915a-4f33-8363-54608c579dc2@npm:coc-htmlhint@0.6.1 /home/yuta-h/.config/coc/extensions/node_modules/coc-htmlhint-5d7bbc52-915a-4f33-8363-54608c579dc2"
-      ]
-    },
     "coc-htmlhint": {
       "version": "0.6.1",
       "overridden": false
-    },
-    "coc-json-d0f6a705-bb8e-488e-bfc1-b8e731a26c49": {
-      "overridden": false,
-      "extraneous": true,
-      "problems": [
-        "extraneous: coc-json-d0f6a705-bb8e-488e-bfc1-b8e731a26c49@ /home/yuta-h/.config/coc/extensions/node_modules/coc-json-d0f6a705-bb8e-488e-bfc1-b8e731a26c49"
-      ]
     },
     "coc-json": {
       "version": "1.9.2",
       "overridden": false
     },
-    "coc-markdownlint-b1bfef53-df93-4344-8a40-22441f740e92": {
-      "overridden": false,
-      "extraneous": true,
-      "problems": [
-        "extraneous: coc-markdownlint-b1bfef53-df93-4344-8a40-22441f740e92@ /home/yuta-h/.config/coc/extensions/node_modules/coc-markdownlint-b1bfef53-df93-4344-8a40-22441f740e92"
-      ]
-    },
     "coc-markdownlint": {
       "version": "1.35.0",
       "overridden": false
-    },
-    "coc-pyright-14df8804-5f68-488b-9337-c9f635363b61": {
-      "version": "1.1.348",
-      "overridden": false,
-      "extraneous": true,
-      "problems": [
-        "extraneous: coc-pyright-14df8804-5f68-488b-9337-c9f635363b61@npm:coc-pyright@1.1.348 /home/yuta-h/.config/coc/extensions/node_modules/coc-pyright-14df8804-5f68-488b-9337-c9f635363b61"
-      ]
     },
     "coc-pyright": {
       "version": "1.1.377",

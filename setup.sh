@@ -42,5 +42,4 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
 (
     cd "$HOME/.config/coc/extensions/node_modules" || exit 1
     npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
-    ~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv/bin/pip list --disable-pip-version-check | grep -e 'ruff' | perl -pe 's/\s+/==/' >"$HOME/.vim/lock/pip.lock.txt"
 )
