@@ -1,17 +1,16 @@
 {
-    "prettier.trailingComma" : "all",
-    "diagnostic-languageserver.filetypes": {
-        "sh": "shellcheck",
-        "yaml": [
-            "yamllint"
-        ]
-    },
-    "diagnostic-languageserver.formatFiletypes": {
-        "sh": "shfmt"
-    },
-    "diagnostic.checkCurrentLine": true,
-    "htmlhint.options": {},
-    "pyright.inlayHints.functionReturnTypes": false,
-    "pyright.inlayHints.parameterTypes": false,
-    "pyright.inlayHints.variableTypes": false
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck",
+    "yaml": [
+      "yamllint"
+    ]
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "sh": "shfmt"
+  },
+  "diagnostic.checkCurrentLine": true,
+  "htmlhint.options": {},
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.parameterTypes": false,
+  "pyright.inlayHints.variableTypes": false
 }
