@@ -12,5 +12,6 @@
   "htmlhint.options": {},
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.parameterTypes": false,
-  "pyright.inlayHints.variableTypes": false
+  "pyright.inlayHints.variableTypes": false,
+  "yaml.schemaStore.enable": true
 }
