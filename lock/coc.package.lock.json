@@ -41,6 +41,10 @@
       "version": "3.3.0",
       "overridden": false
     },
+    "coc-toml": {
+      "version": "1.2.5",
+      "overridden": false
+    },
     "coc-tsserver": {
       "version": "2.2.0",
       "overridden": false
