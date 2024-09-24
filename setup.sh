@@ -35,9 +35,9 @@ eval npm list -g --json "${NPM_PACKAGES}" >"$HOME/.vim/lock/npm_global.package.l
 vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh @yaegassy/coc-ruff coc-biome coc-toml' +qall
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
-# Running ":CocCommand ruff.builtin.installServer" may be needed after update coc-ruff
-# Any problem? : Clean ~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv/ and re-run
-# https://github.com/shirayu/coc-ruff?tab=readme-ov-file#bult-in-install
+# coc-ruff
+#  rm -rf ~/.config/coc/extensions/@yaegassy/coc-ruff-data/
+#  vi '+ :CocCommand ruff.builtin.installServer' ~/a.py
 
 (
     cd "$HOME/.config/coc/extensions/node_modules" || exit 1
