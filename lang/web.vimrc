@@ -6,6 +6,7 @@ endfunction
 " Shift + F
 autocmd myvimrc FileType javascript nnoremap <S-f> :call BiomeFormat('js')<CR>
 autocmd myvimrc FileType typescript nnoremap <S-f> :call BiomeFormat('ts')<CR>
+autocmd myvimrc FileType css nnoremap <S-f> :call BiomeFormat('css')<CR>
 
 
 function! FormatJsonNoSort()
