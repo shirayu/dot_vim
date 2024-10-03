@@ -27,6 +27,7 @@ set nofoldenable
 
 "unnecessary files
 set noswapfile
+set viminfo=
 set nowritebackup
 set nobackup
 
