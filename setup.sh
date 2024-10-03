@@ -9,7 +9,7 @@ ExistCmd npm || exit 1
 ExistCmd pip || exit 1
 ExistCmd python || exit 1
 ExistCmd vim || exit 1
-ExistCmd yarn "Install: npm i --global yarn" || exit 1 # For coc-vim
+ExistCmd yarn || exit 1 # For coc-vim
 
 if [[ $1 == "load" ]]; then
     vim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
