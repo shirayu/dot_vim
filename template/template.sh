@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+echo ${SCRIPT_DIR}
 
 TMPDIR=$(mktemp -d)
 trap 'rm -rf "${TMPDIR}"' EXIT INT TERM HUP
