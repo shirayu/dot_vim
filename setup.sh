@@ -31,7 +31,7 @@ NPM_PACKAGES="markdownlint-cli @biomejs/biome"
 eval pnpm install --global "${NPM_PACKAGES}"
 pnpm -g upgrade
 
-vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh @yaegassy/coc-ruff coc-biome coc-toml' +qall
+vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh @yaegassy/coc-ruff coc-biome coc-toml coc-go' +qall
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
 # coc-ruff

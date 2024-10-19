@@ -17,6 +17,10 @@
       "version": "0.24.1",
       "overridden": false
     },
+    "coc-go": {
+      "version": "1.3.34",
+      "overridden": false
+    },
     "coc-htmlhint": {
       "version": "0.6.1",
       "overridden": false
