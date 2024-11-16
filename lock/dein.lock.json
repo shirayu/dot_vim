@@ -10,7 +10,7 @@
     "vim-fugitive": "d4877e54cef67f5af4f950935b1ade19ed6b7370",
     "vim-template": "2eb0a87998a8666e73298852f1a0e56e5a4fae52",
     "vim-latex": "f108868ae9a85bf33f5ead06fd0b89d27d951165",
-    "dein.vim": "000487e92e05b733ab3b6c1b9760560d83adcbce",
+    "dein.vim": "e9e1ebfed43a8e2f09b26bb560479cecd0c3e821",
     "nosql.vim": "a58a051fb92df4df0baae7dc761ddae0f1263b89",
     "vim-renamer": "9c6346eb4556cf2d8ca55de6969247ab14fe2383",
     "coc.nvim": "57d488a06bdb34de89acef3c2f3e9ce609d632ed",
