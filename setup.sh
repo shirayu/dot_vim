@@ -35,14 +35,14 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
 (
+    # coc-ruff
+    #  rm -rf ~/.config/coc/extensions/@yaegassy/coc-ruff-data/
+    #  vi '+ :CocCommand ruff.builtin.installServer' ~/a.py
+
     DIR_COC_RUFF_BIN=~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv/bin
     "${DIR_COC_RUFF_BIN}/pip" list --format freeze | cut -f1 -d= | xargs "${DIR_COC_RUFF_BIN}/pip" install -U
     "${DIR_COC_RUFF_BIN}/pip" list --format json | "${DIR_COC_RUFF_BIN}/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
 )
-
-# coc-ruff
-#  rm -rf ~/.config/coc/extensions/@yaegassy/coc-ruff-data/
-#  vi '+ :CocCommand ruff.builtin.installServer' ~/a.py
 
 (
     cd "$HOME/.config/coc/extensions/node_modules" || exit 1
