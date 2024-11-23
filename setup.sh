@@ -34,6 +34,12 @@ pnpm -g upgrade
 vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh @yaegassy/coc-ruff coc-biome coc-toml coc-go' +qall
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
+(
+    DIR_COC_RUFF_BIN=~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv/bin
+    "${DIR_COC_RUFF_BIN}/pip" list --format freeze | cut -f1 -d= | xargs "${DIR_COC_RUFF_BIN}/pip" install -U
+    "${DIR_COC_RUFF_BIN}/pip" list --format json | "${DIR_COC_RUFF_BIN}/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
+)
+
 # coc-ruff
 #  rm -rf ~/.config/coc/extensions/@yaegassy/coc-ruff-data/
 #  vi '+ :CocCommand ruff.builtin.installServer' ~/a.py
