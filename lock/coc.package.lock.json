@@ -2,7 +2,7 @@
   "name": "extensions",
   "dependencies": {
     "@yaegassy/coc-ruff": {
-      "version": "0.7.7",
+      "version": "0.7.8",
       "overridden": false
     },
     "coc-biome": {
