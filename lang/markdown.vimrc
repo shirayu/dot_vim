@@ -30,6 +30,6 @@ call dein#add('tpope/vim-markdown', {
 
 " npm -g i markdownlint-cli
 function! FixMd()
-    call ExecForTexts('bash', s:script_dir . '/../markdownfix.bash')
+    call ExecForTexts('bash', s:script_dir . '/markdownfix.bash')
 endfunction
 autocmd myvimrc FileType markdown nnoremap <S-f> :call FixMd()<CR>

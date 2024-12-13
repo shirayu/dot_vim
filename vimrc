@@ -38,7 +38,7 @@ call dein#add('thinca/vim-template')
 call dein#add('itchyny/vim-cursorword')
 
 " language specific setting
-for f in split(glob('~/.vim/lang/*'), '\n')
+for f in split(glob('~/.vim/lang/*.vimrc'), '\n')
         exe 'source' f
 endfor
 
