@@ -9,6 +9,9 @@ set -e
 
 unset tmpfile
 
+CMD=markdownlint
+type "${CMD}" >/dev/null || (echo "${CMD} not found" && exit 1)
+
 atexit() {
     [[ -n ${tmpfile-} ]] && rm -f "$tmpfile"
 }

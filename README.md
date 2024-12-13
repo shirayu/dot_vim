@@ -1,12 +1,6 @@
 # .vimrc
 
-## Vim
-
-```sh
-pip3 install neovim
-```
-
-## NeoVim
+## For NeoVim
 
 ```sh
 mkdir -p ~/.config

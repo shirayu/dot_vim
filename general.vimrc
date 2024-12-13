@@ -143,10 +143,3 @@ function! ExecForTexts(command, args)
         echohl ErrorMsg | echo a:command . ' not installed!' | echohl None
     endif
 endfunction
-
-function! ExecCheck(command)
-    if !executable(a:command)
-        echohl ErrorMsg | echo a:command . ' not installed!' | echohl None
-    endif
-endfunction
-
