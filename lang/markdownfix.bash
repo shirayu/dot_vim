@@ -7,10 +7,11 @@ fi
 
 set -e
 
+SCRIPT_DIR=$(
+    cd "$(dirname "${BASH_SOURCE:-$0}")" || exit 1 \
+        && pwd
+)
 unset tmpfile
-
-CMD=markdownlint
-type "${CMD}" >/dev/null || (echo "${CMD} not found" && exit 1)
 
 atexit() {
     [[ -n ${tmpfile-} ]] && rm -f "$tmpfile"
@@ -29,5 +30,5 @@ elif [ -f "${HOME}/.markdownlint.json" ]; then
 fi
 
 cat - >"$tmpfile"
-eval "markdownlint -f ${tmpfile} ${CONFIG_ARG}" 2>/dev/null || :
+eval "npx -C ${SCRIPT_DIR}/../tools markdownlint -f ${tmpfile} ${CONFIG_ARG}" 2>/dev/null || :
 cat "$tmpfile"
