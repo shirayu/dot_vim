@@ -25,3 +25,6 @@ init.vim
 
 spell
 node_modules
+
+venv
+.venv

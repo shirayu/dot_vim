@@ -32,13 +32,19 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
 
 (
-    # coc-ruff
-    #  rm -rf ~/.config/coc/extensions/@yaegassy/coc-ruff-data/
-    #  vi '+ :CocCommand ruff.builtin.installServer' ~/a.py
+    DIR_VENV=~/.vim/tools/venv
 
-    DIR_COC_RUFF_BIN=~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv/bin
-    "${DIR_COC_RUFF_BIN}/pip" list --format freeze | cut -f1 -d= | xargs "${DIR_COC_RUFF_BIN}/pip" install -U
-    "${DIR_COC_RUFF_BIN}/pip" list --format json | "${DIR_COC_RUFF_BIN}/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
+    if [[ ! -e ${DIR_VENV} ]]; then
+        python -m venv "${DIR_VENV}"
+        "${DIR_VENV}/bin/pip" install ruff-lsp
+    fi
+
+    PATH_COC_RUFF_VENV=~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/
+    mkdir -p ${PATH_COC_RUFF_VENV}
+    ln -s "${DIR_VENV}" "${PATH_COC_RUFF_VENV}"
+
+    "${DIR_VENV}/bin/pip" list --format freeze | cut -f1 -d= | xargs "${DIR_VENV}/bin/pip" install -U
+    "${DIR_VENV}/bin/pip" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
 )
 
 (
