@@ -22,12 +22,6 @@ vi +':call dein#install()' +q
 ./setup.sh update
 ```
 
-[You may need](https://stackoverflow.com/questions/66653234/vim-eslint-not-approved-or-denied-yet) the following command in vim.
-
-```txt
-:CocCommand eslint.showOutputChannel
-```
-
 ## Change default editor
 
 ```bash
