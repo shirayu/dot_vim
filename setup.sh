@@ -18,7 +18,10 @@ if [[ $1 == "load" ]]; then
 
 elif [[ $1 == "update" ]]; then
     vim +':call dein#update()' +q
+
+    # shellcheck disable=SC2016
     vim +':call dein#save_rollback("$HOME/.vim/lock/dein.lock.json.tmp")' +q
+
     python -m json.tool <"$HOME/.vim/lock/dein.lock.json.tmp" >"$HOME/.vim/lock/dein.lock.json"
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
 
