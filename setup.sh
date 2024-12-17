@@ -11,7 +11,8 @@ ExistCmd pip || exit 1
 ExistCmd python || exit 1
 ExistCmd vim || exit 1
 
-PATH_COC_RUFF_VENV=~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp/venv
+PATH_COC_RUFF_DIR=~/.config/coc/extensions/@yaegassy/coc-ruff-data/ruff-lsp
+PATH_COC_RUFF_VENV=${PATH_COC_RUFF_DIR}/venv
 if [[ -e $PATH_COC_RUFF_VENV && ! -L $PATH_COC_RUFF_VENV ]]; then
     echo "Error: $PATH_COC_RUFF_VENV exists and is not a symbolic link." >&2
     exit 1
@@ -48,8 +49,10 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
         "${DIR_VENV}/bin/pip" install ruff-lsp
     fi
 
-    mkdir -p ${PATH_COC_RUFF_VENV}/../..
-    ln -s "${DIR_VENV}" "${PATH_COC_RUFF_VENV}"/../..
+    if [[ ! -e $PATH_COC_RUFF_VENV ]]; then
+        mkdir -p ${PATH_COC_RUFF_DIR}
+        ln -s "${DIR_VENV}" "${PATH_COC_RUFF_DIR}"
+    fi
 
     "${DIR_VENV}/bin/pip" list --format freeze | cut -f1 -d= | xargs "${DIR_VENV}/bin/pip" install -U
     "${DIR_VENV}/bin/pip" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
