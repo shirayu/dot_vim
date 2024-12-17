@@ -49,7 +49,7 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
     fi
 
     mkdir -p ${PATH_COC_RUFF_VENV}/..
-    ln -s "${DIR_VENV}" "${PATH_COC_RUFF_VENV}"
+    ln -s "${DIR_VENV}" "${PATH_COC_RUFF_VENV}"/..
 
     "${DIR_VENV}/bin/pip" list --format freeze | cut -f1 -d= | xargs "${DIR_VENV}/bin/pip" install -U
     "${DIR_VENV}/bin/pip" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
