@@ -44,6 +44,7 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
 (
     DIR_VENV=~/.vim/tools/venv
     VENV_PIP="${DIR_VENV}/bin/pip"
+    VENV_LOCK_FILE="$HOME/.vim/lock/coc_ruff.pip.lock.json"
 
     if [[ ! -e ${DIR_VENV} ]]; then
         python -m venv "${DIR_VENV}"
@@ -55,8 +56,14 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
         ln -s "${DIR_VENV}" "${PATH_COC_RUFF_DIR}"
     fi
 
-    "${VENV_PIP}" list --format freeze | cut -f1 -d= | xargs "${VENV_PIP}" install -U
-    "${VENV_PIP}" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
+    if [[ $1 == "load" ]]; then
+        python -c 'import json,sys; print(" ".join([f"{x["name"]}=={x["version"]}" for x in json.load(sys.stdin)]))' \
+            <"${VENV_LOCK_FILE}" \
+            | xargs -t ~/.vim/tools/venv/bin/pip install
+    else
+        "${VENV_PIP}" list --format freeze | cut -f1 -d= | xargs "${VENV_PIP}" install -U
+        "${VENV_PIP}" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"${VENV_LOCK_FILE}"
+    fi
 )
 
 (
