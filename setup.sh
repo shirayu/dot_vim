@@ -43,10 +43,11 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
 
 (
     DIR_VENV=~/.vim/tools/venv
+    VENV_PIP="${DIR_VENV}/bin/pip"
 
     if [[ ! -e ${DIR_VENV} ]]; then
         python -m venv "${DIR_VENV}"
-        "${DIR_VENV}/bin/pip" install ruff-lsp
+        "${VENV_PIP}" install ruff-lsp
     fi
 
     if [[ ! -e $PATH_COC_RUFF_VENV ]]; then
@@ -54,8 +55,8 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
         ln -s "${DIR_VENV}" "${PATH_COC_RUFF_DIR}"
     fi
 
-    "${DIR_VENV}/bin/pip" list --format freeze | cut -f1 -d= | xargs "${DIR_VENV}/bin/pip" install -U
-    "${DIR_VENV}/bin/pip" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
+    "${VENV_PIP}" list --format freeze | cut -f1 -d= | xargs "${VENV_PIP}" install -U
+    "${VENV_PIP}" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"$HOME/.vim/lock/coc_ruff.pip.lock.json"
 )
 
 (
