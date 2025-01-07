@@ -23,6 +23,8 @@ if [[ $1 == "load" ]]; then
 
     xargs -t pip install <"$HOME/.vim/lock/pip.lock.txt"
 
+    # TODO: load pnpm for ~/.vim/tools
+
 elif [[ $1 == "update" ]]; then
     vim +':call dein#update()' +q
 
@@ -38,8 +40,21 @@ else
     exit 1
 fi
 
-vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh @yaegassy/coc-ruff coc-biome coc-toml coc-go' +qall
-# https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632498202
+COC_NODE_MODURLES_DIR="$HOME/.config/coc/extensions/node_modules"
+if [[ $1 == "load" ]]; then
+    (
+        mkdir -p "${COC_NODE_MODURLES_DIR}"
+        cd "${COC_NODE_MODURLES_DIR}" || exit 1
+
+        # TODO: load npm for COC_NODE_MODURLES_DIR
+    )
+else
+    (
+        vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh @yaegassy/coc-ruff coc-biome coc-toml coc-go' +qall
+        cd "${COC_NODE_MODURLES_DIR}" || exit 1
+        npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
+    )
+fi
 
 (
     DIR_VENV=~/.vim/tools/venv
@@ -64,9 +79,4 @@ vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint co
         "${VENV_PIP}" list --format freeze | cut -f1 -d= | xargs "${VENV_PIP}" install -U
         "${VENV_PIP}" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"${VENV_LOCK_FILE}"
     fi
-)
-
-(
-    cd "$HOME/.config/coc/extensions/node_modules" || exit 1
-    npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
 )
