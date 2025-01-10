@@ -25,11 +25,11 @@
     },
     {
         "name": "ruff",
-        "version": "0.8.6"
+        "version": "0.9.0"
     },
     {
         "name": "ruff-lsp",
-        "version": "0.0.59"
+        "version": "0.0.60"
     },
     {
         "name": "typing_extensions",
