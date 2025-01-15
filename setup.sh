@@ -31,7 +31,7 @@ elif [[ $1 == "update" ]]; then
     # shellcheck disable=SC2016
     vim +':call dein#save_rollback("$HOME/.vim/lock/dein.lock.json.tmp")' +q
 
-    python -m json.tool <"$HOME/.vim/lock/dein.lock.json.tmp" >"$HOME/.vim/lock/dein.lock.json"
+    python -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))"  <"$HOME/.vim/lock/dein.lock.json.tmp" >"$HOME/.vim/lock/dein.lock.json"
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
 
     pnpm -C ~/.vim/tools up --latest
