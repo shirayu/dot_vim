@@ -1,38 +1,38 @@
 [
-    {
-        "name": "attrs",
-        "version": "24.3.0"
-    },
-    {
-        "name": "cattrs",
-        "version": "24.1.2"
-    },
-    {
-        "name": "lsprotocol",
-        "version": "2023.0.1"
-    },
-    {
-        "name": "packaging",
-        "version": "24.2"
-    },
-    {
-        "name": "pip",
-        "version": "24.3.1"
-    },
-    {
-        "name": "pygls",
-        "version": "1.3.1"
-    },
-    {
-        "name": "ruff",
-        "version": "0.9.1"
-    },
-    {
-        "name": "ruff-lsp",
-        "version": "0.0.60"
-    },
-    {
-        "name": "typing_extensions",
-        "version": "4.12.2"
-    }
+  {
+    "name": "attrs",
+    "version": "24.3.0"
+  },
+  {
+    "name": "cattrs",
+    "version": "24.1.2"
+  },
+  {
+    "name": "lsprotocol",
+    "version": "2023.0.1"
+  },
+  {
+    "name": "packaging",
+    "version": "24.2"
+  },
+  {
+    "name": "pip",
+    "version": "24.3.1"
+  },
+  {
+    "name": "pygls",
+    "version": "1.3.1"
+  },
+  {
+    "name": "ruff",
+    "version": "0.9.1"
+  },
+  {
+    "name": "ruff-lsp",
+    "version": "0.0.60"
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.12.2"
+  }
 ]

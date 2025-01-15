@@ -1,9 +1,7 @@
 {
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck",
-    "yaml": [
-      "yamllint"
-    ]
+    "yaml": ["yamllint"]
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt"

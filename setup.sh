@@ -77,6 +77,6 @@ fi
             | xargs -t ~/.vim/tools/venv/bin/pip install
     else
         "${VENV_PIP}" list --format freeze | cut -f1 -d= | xargs "${VENV_PIP}" install -U
-        "${VENV_PIP}" list --format json | "${DIR_VENV}/bin/python" -m json.tool >"${VENV_LOCK_FILE}"
+        "${VENV_PIP}" list --format json | "${DIR_VENV}/bin/python" -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))" >"${VENV_LOCK_FILE}"
     fi
 )
