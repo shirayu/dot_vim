@@ -21,8 +21,6 @@ fi
 if [[ $1 == "load" ]]; then
     vim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
 
-    xargs -t pip install <"$HOME/.vim/lock/pip.lock.txt"
-
     # TODO: load pnpm for ~/.vim/tools
 
 elif [[ $1 == "update" ]]; then
