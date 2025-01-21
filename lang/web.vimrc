@@ -1,6 +1,6 @@
 
 function! BiomeFormat(ext)
-    call ExecForTexts('npx', '-C ~/.vim/tools biome format --write --stdin-file-path STDIN.' . a:ext)
+    call ExecForTexts('npx', '-C ~/.vim/tools biome format --write --config-path='. $HOME .'/.vim/biome.json --stdin-file-path STDIN.' . a:ext)
 endfunction
 
 " Shift + F
