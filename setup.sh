@@ -48,7 +48,21 @@ if [[ $1 == "load" ]]; then
     )
 else
     (
-        vim -c 'CocInstall -sync coc-markdownlint coc-diagnostic coc-css coc-htmlhint coc-json coc-yaml coc-texlab coc-pyright coc-tsserver coc-sh @yaegassy/coc-ruff coc-biome coc-toml coc-go' +qall
+        TAGERT=$(echo \
+            coc-markdownlint \
+            coc-diagnostic \
+            coc-css \
+            coc-json \
+            coc-yaml \
+            coc-texlab \
+            coc-pyright \
+            coc-tsserver \
+            coc-sh \
+            @yaegassy/coc-ruff \
+            coc-biome \
+            coc-toml \
+            coc-go)
+        vim -c "CocInstall -sync ${TAGERT}" +qall
         cd "${COC_NODE_MODURLES_DIR}" || exit 1
         npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
     )
