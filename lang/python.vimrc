@@ -3,6 +3,19 @@
 
 autocmd myvimrc FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
+" To use .venv/bin/ruff in coc-ruff
+if expand('%:e') ==# 'py'
+    let dir = expand('%:p:h')
+    while dir !=# '/' && !empty(dir)
+        let venv_bin = dir . '/.venv/bin'
+        if isdirectory(venv_bin)
+            let $PATH = venv_bin . ':' . $PATH
+            call setenv('PATH', $PATH)
+            break
+        endif
+        let dir = fnamemodify(dir, ':h')
+    endwhile
+endif
 
 function! FormatPython()
     " If coc is not ready, this raises an error
