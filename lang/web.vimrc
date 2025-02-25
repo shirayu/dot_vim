@@ -5,8 +5,11 @@ endfunction
 
 " Shift + F
 autocmd myvimrc FileType javascript nnoremap <S-f> :call BiomeFormat('js')<CR>
+autocmd myvimrc FileType javascriptreact nnoremap <S-f> :call BiomeFormat('jsx')<CR>
 autocmd myvimrc FileType typescript nnoremap <S-f> :call BiomeFormat('ts')<CR>
+autocmd myvimrc FileType typescriptreact nnoremap <S-f> :call BiomeFormat('tsx')<CR>
 autocmd myvimrc FileType css nnoremap <S-f> :call BiomeFormat('css')<CR>
+autocmd myvimrc FileType graphql nnoremap <S-f> :call BiomeFormat('gql')<C
 
 
 function! FormatJsonNoSort()
