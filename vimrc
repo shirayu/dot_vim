@@ -3,10 +3,6 @@
 set nocompatible
 filetype off
 
-if v:version < 802
-    echoerr 'Too old Vim version: "' . v:version . '".'
-endif
-
 augroup myvimrc
   autocmd!
 augroup END
