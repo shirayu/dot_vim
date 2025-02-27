@@ -32,3 +32,5 @@ aug python
   au!
   au BufWrite *.py call FormatPython()
 aug END
+
+autocmd myvimrc BufNewFile *.py Template default
