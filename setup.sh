@@ -5,6 +5,10 @@ ExistCmd() {
     type "$1" || (echo "$2" && exit 1)
 }
 
+SortJson() {
+    python3 -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))"
+}
+
 ExistCmd npm || exit 1
 ExistCmd pnpm || exit 1
 ExistCmd pip || exit 1
@@ -57,7 +61,7 @@ else
             coc-go)
         vim -c "CocInstall -sync ${TAGERT}" +qall
         npm i --package-lock-only -C "${COC_NODE_MODURLES_DIR}"
-        cp "${COC_NODE_MODURLES_DIR}/package.json" "$HOME/.vim/lock/coc.package.json"
-        cp "${COC_NODE_MODURLES_DIR}/package-lock.json" "$HOME/.vim/lock/coc.package-lock.json"
+        SortJson < "${COC_NODE_MODURLES_DIR}/package.json" > "$HOME/.vim/lock/coc.package.json"
+        SortJson < "${COC_NODE_MODURLES_DIR}/package-lock.json" > "$HOME/.vim/lock/coc.package-lock.json"
     )
 fi
