@@ -14,7 +14,7 @@ ExistCmd vim || exit 1
 if [[ $1 == "load" ]]; then
     vim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
 
-    # TODO: load pnpm for ~/.vim/tools
+    pnpm -C ~/.vim/tools install
 
 elif [[ $1 == "update" ]]; then
     vim +':call dein#update()' +q
