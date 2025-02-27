@@ -21,7 +21,11 @@ set whichwrap=b,s,h,l,<,>,[,]
 set pastetoggle=<F3>
 
 "set color
-set background=dark
+if has('nvim')
+  colorscheme vim
+else
+  set background=dark
+endif
 set foldlevel=100 "Don't autofold anything
 set nofoldenable
 
