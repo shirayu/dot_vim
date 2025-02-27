@@ -31,13 +31,13 @@ else
     exit 1
 fi
 
-COC_NODE_MODURLES_DIR="$HOME/.config/coc/extensions/node_modules"
+COC_NODE_MODURLES_DIR="$HOME/.config/coc/extensions"
 if [[ $1 == "load" ]]; then
     (
         mkdir -p "${COC_NODE_MODURLES_DIR}"
-        cd "${COC_NODE_MODURLES_DIR}" || exit 1
-
-        # TODO: load npm for COC_NODE_MODURLES_DIR
+        cp "$HOME/.vim/lock/coc.package.json" "${COC_NODE_MODURLES_DIR}/package.json" 
+        cp "$HOME/.vim/lock/coc.package-lock.json" "${COC_NODE_MODURLES_DIR}/package-lock.json" 
+        npm i -C "${COC_NODE_MODURLES_DIR}"
     )
 else
     (
@@ -56,7 +56,8 @@ else
             coc-toml \
             coc-go)
         vim -c "CocInstall -sync ${TAGERT}" +qall
-        cd "${COC_NODE_MODURLES_DIR}" || exit 1
-        npm list --json >"$HOME/.vim/lock/coc.package.lock.json"
+        npm i --package-lock-only -C "${COC_NODE_MODURLES_DIR}"
+        cp "${COC_NODE_MODURLES_DIR}/package.json" "$HOME/.vim/lock/coc.package.json"
+        cp "${COC_NODE_MODURLES_DIR}/package-lock.json" "$HOME/.vim/lock/coc.package-lock.json"
     )
 fi
