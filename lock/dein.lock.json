@@ -1,6 +1,6 @@
 {
   "EnhancedCommentify": "70c166ce692b0344fa6b17ad89775b7caaf0608e",
-  "coc.nvim": "72754c99955097fddd509c9fcce589255a643b16",
+  "coc.nvim": "ed6a2aaad128c417e4d8e11db1dda282f8edf6df",
   "dein.vim": "dd5e1cc6ce869253b9c68284d6d885f75bfcfd6a",
   "lightline.vim": "e358557e1a9f9fc860416c8eb2e34c0404078155",
   "nosql.vim": "a58a051fb92df4df0baae7dc761ddae0f1263b89",
@@ -10,7 +10,7 @@
   "vim-fugitive": "4a745ea72fa93bb15dd077109afbb3d1809383f2",
   "vim-gitgutter": "7b0b5098e3e57be86bb96cfbf2b8902381eef57c",
   "vim-go": "6adc82bfef7f9a4b0db78065ae51b8ebb145c355",
-  "vim-jsonl": "aa3291a5067cdd7c8675e20d2eda0fcae243cc7a",
+  "vim-jsonl": "f58de3cfb85c276baa68bf9d9d20c78344810bf7",
   "vim-latex": "08821de4f16625dfe35c9d0d18bb650102e4107f",
   "vim-markdown": "f9f845f28f4da33a7655accb22f4ad21f7d9fb66",
   "vim-renamer": "9c6346eb4556cf2d8ca55de6969247ab14fe2383",
