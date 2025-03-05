@@ -1,6 +1,6 @@
-# .vimrc
+# .vimrc for NeoVim
 
-## For NeoVim
+## Setup
 
 ```sh
 mkdir -p ~/.config

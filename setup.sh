@@ -13,18 +13,18 @@ ExistCmd npm || exit 1
 ExistCmd pnpm || exit 1
 ExistCmd pip || exit 1
 ExistCmd python || exit 1
-ExistCmd vim || exit 1
+ExistCmd nvim || exit 1
 
 if [[ $1 == "load" ]]; then
-    vim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
+    nvim +':call dein#load_rollback(expand("~/.vim/lock/dein.lock.json"))' +q
 
     pnpm -C ~/.vim/tools install
 
 elif [[ $1 == "update" ]]; then
-    vim +':call dein#update()' +q
+    nvim +':call dein#update()' +q
 
     # shellcheck disable=SC2016
-    vim +':call dein#save_rollback("$HOME/.vim/lock/dein.lock.json.tmp")' +q
+    nvim +':call dein#save_rollback("$HOME/.vim/lock/dein.lock.json.tmp")' +q
 
     python -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))"  <"$HOME/.vim/lock/dein.lock.json.tmp" >"$HOME/.vim/lock/dein.lock.json"
     rm "$HOME/.vim/lock/dein.lock.json.tmp"
@@ -59,7 +59,7 @@ else
             coc-biome \
             coc-toml \
             coc-go)
-        vim -c "CocInstall -sync ${TAGERT}" +qall
+        nvim -c "CocInstall -sync ${TAGERT}" +qall
         npm i --package-lock-only -C "${COC_NODE_MODURLES_DIR}"
         SortJson < "${COC_NODE_MODURLES_DIR}/package.json" > "$HOME/.vim/lock/coc.package.json"
         SortJson < "${COC_NODE_MODURLES_DIR}/package-lock.json" > "$HOME/.vim/lock/coc.package-lock.json"
