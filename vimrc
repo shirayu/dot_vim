@@ -25,15 +25,6 @@ for f in split(glob('~/.vim/common/*'), '\n')
         exe 'source' f
 endfor
 
-call dein#add('qpkorr/vim-renamer')
-
-" Temttn/vim-sonictemplate'plate
-call dein#add('mattn/vim-sonictemplate')
-let g:sonictemplate_vim_template_dir = [expand('~/.vim/template')]
-
-" Underlines the word under the cursor
-call dein#add('itchyny/vim-cursorword')
-
 " language specific setting
 for f in split(glob('~/.vim/lang/*.vimrc'), '\n')
         exe 'source' f
