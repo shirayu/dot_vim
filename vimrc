@@ -20,15 +20,21 @@ call dein#add('Shougo/dein.vim')
 "call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 
-" Call complex plugins
-for f in split(glob('~/.vim/common/*'), '\n')
+" Call complex plugins and language specific setting
+for f in split(glob('~/.vim/common/*') . "\n" . glob('~/.vim/lang/*.vimrc'), '\n')
+    if match(f, '\.nvim\.') >= 0
+         if has('nvim')
+            exe 'source' f
+        endif
+    elseif match(f, '\.vim\.') >= 0
+         if ! has('nvim')
+            exe 'source' f
+        endif
+    else
         exe 'source' f
+    endif
 endfor
 
-" language specific setting
-for f in split(glob('~/.vim/lang/*.vimrc'), '\n')
-        exe 'source' f
-endfor
 
 augroup QfAutoCommands
   autocmd!
