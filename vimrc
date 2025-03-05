@@ -22,12 +22,13 @@ call dein#add('Shougo/dein.vim')
 
 " Call complex plugins and language specific setting
 for f in split(glob('~/.vim/common/*') . "\n" . glob('~/.vim/lang/*.vimrc'), '\n')
-    if match(f, '\.nvim\.') >= 0
-         if has('nvim')
+    let fname = fnamemodify(f, ':t')
+    if match(fname, '\.nvim\.') >= 0
+        if has('nvim')
             exe 'source' f
         endif
-    elseif match(f, '\.vim\.') >= 0
-         if ! has('nvim')
+    elseif match(fname, '\.vim\.') >= 0
+        if ! has('nvim')
             exe 'source' f
         endif
     else
