@@ -1,4 +1,4 @@
-# .vimrc for NeoVim
+# .vimrc for Vim
 
 ## Setup
 
